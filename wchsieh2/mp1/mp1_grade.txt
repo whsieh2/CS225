@@ -1,0 +1,7 @@
+Monad Autograder
+Testing mp1 at 2013-09-01 00:45:42
+
+"Computers are like Old Testament gods; lots of rules and no mercy." ~ Joseph Campbell
+
+Setting up test environment...
+Error: /dev/shm/geigle1/monad/fa13-cs225/wchsieh2/mp1/Makefile does not exist.
