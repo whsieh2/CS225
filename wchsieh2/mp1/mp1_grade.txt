@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp1 at 2013-09-01 00:45:42
+Testing mp1 at 2013-09-02 00:48:34
 
-"Computers are like Old Testament gods; lots of rules and no mercy." ~ Joseph Campbell
+"We are what we repeatedly do. Excellence, then, is not an act, but a habit." ~ Aristotle
 
 Setting up test environment...
 Error: /dev/shm/geigle1/monad/fa13-cs225/wchsieh2/mp1/Makefile does not exist.
