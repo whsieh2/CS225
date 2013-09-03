@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp1 at 2013-09-02 00:48:34
+Testing mp1 at 2013-09-03 00:56:50
 
-"We are what we repeatedly do. Excellence, then, is not an act, but a habit." ~ Aristotle
+"Computer Science is no more about computers than astronomy is about telescopes." ~ E. Dijkstra
 
 Setting up test environment...
 Error: /dev/shm/geigle1/monad/fa13-cs225/wchsieh2/mp1/Makefile does not exist.
