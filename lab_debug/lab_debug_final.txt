@@ -1,0 +1,25 @@
+Monad Autograder
+Testing lab_debug at 2013-09-09 01:07:53
+
+"A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools." ~ Douglas Adams
+
+Setting up test environment...
+Compiling...
+================================================================
+main.cpp: In function 'RGBAPixel* myFavoriteColor(int)':
+main.cpp:83: warning: no return statement in function returning non-void
+
+
+Running tests...
+================================================================
+no_segfaults . . . [20 pts] - passed
+produces_out_png . [10 pts] - passed
+similar_sketch . . [30 pts] - passed
+complete_in_01_bmp [20 pts] - passed
+complete_in_02_bmp [20 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+
