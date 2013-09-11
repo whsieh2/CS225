@@ -2,8 +2,9 @@
 #include <iostream>
 
 
-void Image::flipleft() 	
-{
+void Image::flipleft() 	// I used tempA as a temporary variable to hold the left most pixel value. 
+//then I gave the leftmost pixel the value of the rightmost pixel, and vice versa.
+{ 
 	int imageWidth = (*this).width();
 	int imageHeight = (*this).height();
 	RGBAPixel * tempA = new RGBAPixel();
@@ -21,7 +22,8 @@ void Image::flipleft()
 	}
 	delete tempA;
 }
-void Image::adjustbrightness(int r, int g, int b) 
+void Image::adjustbrightness(int r, int g, int b) // Took every pixel and add the parameter values to each pixel.
+// if it was over 255, the value would cap at 255. 
 {
 	int imageWidth =(*this).width();
 	int imageHeight = (*this).height();
@@ -51,7 +53,7 @@ void Image::adjustbrightness(int r, int g, int b)
 		}
 	}
 }
-void Image::invertcolors() 
+void Image::invertcolors() // I took every pixel and subtracted each color value from 255.
 {
 	int imageWidth = (*this).width();
 	int imageHeight = (*this).height();
