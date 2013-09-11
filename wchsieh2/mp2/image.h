@@ -4,7 +4,7 @@
 
 class Image : public PNG
 {
-	public:
+	public:  //constructor 
    		void flipleft();
 		void adjustbrightness(int r, int g, int b);
 		void invertcolors();
