@@ -1,0 +1,39 @@
+Monad Autograder
+Testing mp1.1 at 2013-09-11 01:19:42
+
+"Now that's just math for math's sake." ~ Prof. Julia Hockenmaier
+
+Setting up test environment...
+Compiling...
+================================================================
+g++  -c -g -O0 -Wall -Werror  main.cpp 
+g++  main.o png.o rgbapixel.o  -lpng  -o mp1 
+
+
+Running tests...
+================================================================
+RGBAPixel_default_ctor [5 pts]  - passed
+RGBAPixel_three_ctor . [10 pts] - passed
+in_01_png  . . . . . . [5 pts]  - FAILED
+in_02_png  . . . . . . [5 pts]  - FAILED
+in_03_png  . . . . . . [5 pts]  - FAILED
+in_04_png  . . . . . . [5 pts]  - FAILED
+in_05_png  . . . . . . [5 pts]  - FAILED
+in_06_png  . . . . . . [5 pts]  - FAILED
+in_07_png  . . . . . . [5 pts]  - FAILED
+in_08_png  . . . . . . [5 pts]  - FAILED
+in_09_png  . . . . . . [5 pts]  - FAILED
+in_10_png  . . . . . . [5 pts]  - FAILED
+in_11_png  . . . . . . [5 pts]  - FAILED
+in_12_png  . . . . . . [5 pts]  - FAILED
+in_13_png  . . . . . . [5 pts]  - FAILED
+in_14_png  . . . . . . [5 pts]  - FAILED
+in_15_png  . . . . . . [5 pts]  - FAILED
+in_16_png  . . . . . . [5 pts]  - FAILED
+in_17_png  . . . . . . [5 pts]  - FAILED
+
+
+Total score...
+================================================================
+TOTAL SCORE: 15
+
