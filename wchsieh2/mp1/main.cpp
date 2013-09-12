@@ -5,24 +5,27 @@ using namespace std;
 
 int main()
 {
-	PNG image("in_02.png");
+	PNG image("in.png");
 	int imageWidth = image.width();
 	int imageHeight = image.height();
-	int x;
-	int y;
 	PNG outImage(imageWidth, imageHeight);
 
-	for (x=0; x < imageWidth; x++)
+	for (int x=0; x < imageWidth; x++)
 	{	
-		for (y=0; y < imageHeight; y++)
+		for (int y=0; y < imageHeight; y++)
 		{
-			*outImage((imageWidth-1)-x,(imageHeight-1)-y) = *image(x,y);
+			RGBAPixel pixel = *image((imageWidth-1)-x,(imageHeight-1)-y);
+			outImage(x,y) -> red = pixel.red;
+			outImage(x,y) -> green = pixel.green;
+			outImage(x,y) -> blue = pixel.blue;
+			outImage(x,y) -> alpha = pixel.alpha;
 		}
 	}
-	image.writeToFile("output.png");
+	outImage.writeToFile("out.png");
 	return 0;
 	
-}
+};
+
 
 
 	
