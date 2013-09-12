@@ -8,12 +8,12 @@ void Image::flipleft() 	// I used tempA as a temporary variable to hold the left
 	int imageWidth = (*this).width();
 	int imageHeight = (*this).height();
 	RGBAPixel * tempA = new RGBAPixel();
-	for (int x=0; x < imageWidth/2; x++)
+	for (int x=0; x < imageWidth/2; x++) 
 	{	
 		for (int y=0; y < imageHeight; y++)
 		{
-			RGBAPixel * leftPixel = (*this)(x,y);
-			RGBAPixel * rightPixel = (*this)((imageWidth - x)-1,y);
+			RGBAPixel * leftPixel = (*this)(x,y); //pointer to the pixels on the left of the y axis
+			RGBAPixel * rightPixel = (*this)((imageWidth - x)-1,y);  //pointer to the pixels on the right
 			
 			*tempA = *leftPixel;
 			*leftPixel = *rightPixel;
@@ -33,23 +33,29 @@ void Image::adjustbrightness(int r, int g, int b) // Took every pixel and add th
 		for (int y=0; y < imageHeight; y++)
 		{
 			RGBAPixel * pixel = (*this)(x,y);
-			pixel-> red = pixel-> red + r;
-			if (pixel-> red > 255)
+			
+			if (pixel-> red + r > 255)
 				pixel-> red = 255;
-			if (pixel-> red < 0)
+			else if (pixel-> red + r < 0)
 				pixel-> red = 0;
+			else 
+				pixel-> red += r;
 
-			pixel->green = pixel-> green + g;
-			if (pixel->green > 255)
+			
+			if (pixel->green + g > 255)
 				pixel->green = 255;
-			if (pixel->green < 0)
+			else if (pixel->green + g < 0)
 				pixel->green = 0;
+			else			
+				pixel->green += g;
 
-			pixel->blue = pixel-> blue + b;
-			if (pixel->blue > 255)
+			
+			if (pixel->blue + b > 255)
 				pixel->blue = 255;
-			if (pixel->blue < 0)
+			else if (pixel->blue + b < 0)
 				pixel->blue = 0;
+			else
+				pixel->blue += b;
 		}
 	}
 }
