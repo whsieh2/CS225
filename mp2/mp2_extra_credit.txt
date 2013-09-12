@@ -1,0 +1,26 @@
+Monad Autograder
+Testing mp2.1 at 2013-09-12 00:13:45
+
+"There's not enough wiggleability, you know." ~ Eric Shaffer
+
+Setting up test environment...
+cp: cannot stat `/dev/shm/geigle1/monad/fa13-cs225/wchsieh2/mp2/scene.h': No such file or directory
+cp: cannot stat `/dev/shm/geigle1/monad/fa13-cs225/wchsieh2/mp2/scene.cpp': No such file or directory
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+InvertColorsEven  . . [33 pts] - passed
+FlipLeftEven  . . . . [17 pts] - passed
+FlipLeftOdd . . . . . [17 pts] - passed
+AdjustBrightnessEven  [11 pts] - passed
+AdjustBrightnessEven2 [11 pts] - FAILED
+AdjustBrightnessEven3 [11 pts] - FAILED
+
+
+Total score...
+================================================================
+TOTAL SCORE: 78
+
