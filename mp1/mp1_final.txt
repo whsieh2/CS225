@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp1 at 2013-09-04 01:17:25
+Testing mp1 at 2013-09-12 14:44:27
 
-"For humans, honesty is a matter of degree. Engineers are always honest in matters of technology and human relationships. That's why it's a good idea to keep engineers away from customers, romantic interests, and other people who can't handle the truth." ~ Scott Adams
+"The cheating sheet is key to success in CS 412 course." ~ CS 412 TA
 
 Setting up test environment...
 Compiling...
@@ -14,172 +14,26 @@ Running tests...
 ================================================================
 RGBAPixel_default_ctor [5 pts]  - passed
 RGBAPixel_three_ctor . [10 pts] - passed
-in_01_png  . . . . . . [5 pts]  - FAILED: unit_tests.cpp:49: out.png != out_01.png
-in_02_png  . . . . . . [5 pts]  - FAILED: unit_tests.cpp:50: out.png != out_02.png
-in_03_png  . . . . . . [5 pts]  - FAILED: unit_tests.cpp:51: out.png != out_03.png
-in_04_png  . . . . . . [5 pts]  - FAILED: unit_tests.cpp:52: out.png != out_04.png
-in_05_png  . . . . . . [5 pts]  - FAILED: unit_tests.cpp:53: out.png != out_05.png
-in_06_png  . . . . . . [5 pts]  - FAILED: unit_tests.cpp:54: out.png != out_06.png
-in_07_png  . . . . . . [5 pts]  - FAILED: unit_tests.cpp:55: out.png != out_07.png
-in_08_png  . . . . . . [5 pts]  - FAILED: unit_tests.cpp:56: out.png != out_08.png
-in_09_png  . . . . . . [5 pts]  - FAILED: unit_tests.cpp:57: out.png != out_09.png
-in_10_png  . . . . . . [5 pts]  - FAILED: unit_tests.cpp:58: out.png != out_10.png
-in_11_png  . . . . . . [5 pts]  - FAILED: unit_tests.cpp:59: out.png != out_11.png
-in_12_png  . . . . . . [5 pts]  - FAILED: unit_tests.cpp:60: out.png != out_12.png
-in_13_png  . . . . . . [5 pts]  - FAILED: unit_tests.cpp:61: out.png != out_13.png
-in_14_png  . . . . . . [5 pts]  - FAILED: unit_tests.cpp:62: out.png != out_14.png
-in_15_png  . . . . . . [5 pts]  - FAILED: unit_tests.cpp:63: out.png != out_15.png
-in_16_png  . . . . . . [5 pts]  - FAILED: unit_tests.cpp:64: out.png != out_16.png
-in_17_png  . . . . . . [5 pts]  - FAILED: unit_tests.cpp:65: out.png != out_17.png
+in_01_png  . . . . . . [5 pts]  - passed
+in_02_png  . . . . . . [5 pts]  - passed
+in_03_png  . . . . . . [5 pts]  - passed
+in_04_png  . . . . . . [5 pts]  - passed
+in_05_png  . . . . . . [5 pts]  - passed
+in_06_png  . . . . . . [5 pts]  - passed
+in_07_png  . . . . . . [5 pts]  - passed
+in_08_png  . . . . . . [5 pts]  - passed
+in_09_png  . . . . . . [5 pts]  - passed
+in_10_png  . . . . . . [5 pts]  - passed
+in_11_png  . . . . . . [5 pts]  - passed
+in_12_png  . . . . . . [5 pts]  - passed
+in_13_png  . . . . . . [5 pts]  - passed
+in_14_png  . . . . . . [5 pts]  - passed
+in_15_png  . . . . . . [5 pts]  - passed
+in_16_png  . . . . . . [5 pts]  - passed
+in_17_png  . . . . . . [5 pts]  - passed
 
 
 Total score...
 ================================================================
-TOTAL SCORE: 15
-
-
-
-Detailed test output...
-================================================================
-----------------------------------------------------------------
-in_01_png [5 points]
-Result: FAILED: unit_tests.cpp:49: out.png != out_01.png
-Took 13ms (1000ms timeout)
-Output:
-----------------------------------------------------------------
-[EasyPNG]: Failed to open ./out.png
-
-----------------------------------------------------------------
-in_02_png [5 points]
-Result: FAILED: unit_tests.cpp:50: out.png != out_02.png
-Took 10ms (1000ms timeout)
-Output:
-----------------------------------------------------------------
-[EasyPNG]: Failed to open ./out.png
-
-----------------------------------------------------------------
-in_03_png [5 points]
-Result: FAILED: unit_tests.cpp:51: out.png != out_03.png
-Took 8ms (1000ms timeout)
-Output:
-----------------------------------------------------------------
-[EasyPNG]: Failed to open ./out.png
-
-----------------------------------------------------------------
-in_04_png [5 points]
-Result: FAILED: unit_tests.cpp:52: out.png != out_04.png
-Took 2ms (1000ms timeout)
-Output:
-----------------------------------------------------------------
-[EasyPNG]: Failed to open ./out.png
-
-----------------------------------------------------------------
-in_05_png [5 points]
-Result: FAILED: unit_tests.cpp:53: out.png != out_05.png
-Took 12ms (1000ms timeout)
-Output:
-----------------------------------------------------------------
-[EasyPNG]: Failed to open ./out.png
-
-----------------------------------------------------------------
-in_06_png [5 points]
-Result: FAILED: unit_tests.cpp:54: out.png != out_06.png
-Took 13ms (1000ms timeout)
-Output:
-----------------------------------------------------------------
-[EasyPNG]: Failed to open ./out.png
-
-----------------------------------------------------------------
-in_07_png [5 points]
-Result: FAILED: unit_tests.cpp:55: out.png != out_07.png
-Took 13ms (1000ms timeout)
-Output:
-----------------------------------------------------------------
-[EasyPNG]: Failed to open ./out.png
-
-----------------------------------------------------------------
-in_08_png [5 points]
-Result: FAILED: unit_tests.cpp:56: out.png != out_08.png
-Took 11ms (1000ms timeout)
-Output:
-----------------------------------------------------------------
-[EasyPNG]: Failed to open ./out.png
-
-----------------------------------------------------------------
-in_09_png [5 points]
-Result: FAILED: unit_tests.cpp:57: out.png != out_09.png
-Took 10ms (1000ms timeout)
-Output:
-----------------------------------------------------------------
-[EasyPNG]: Failed to open ./out.png
-
-----------------------------------------------------------------
-in_10_png [5 points]
-Result: FAILED: unit_tests.cpp:58: out.png != out_10.png
-Took 31ms (1000ms timeout)
-Output:
-----------------------------------------------------------------
-[EasyPNG]: Failed to open ./out.png
-
-----------------------------------------------------------------
-in_11_png [5 points]
-Result: FAILED: unit_tests.cpp:59: out.png != out_11.png
-Took 0ms (1000ms timeout)
-Output:
-----------------------------------------------------------------
-[EasyPNG]: Failed to open ./out.png
-
-----------------------------------------------------------------
-in_12_png [5 points]
-Result: FAILED: unit_tests.cpp:60: out.png != out_12.png
-Took 0ms (1000ms timeout)
-Output:
-----------------------------------------------------------------
-[EasyPNG]: Failed to open ./out.png
-
-----------------------------------------------------------------
-in_13_png [5 points]
-Result: FAILED: unit_tests.cpp:61: out.png != out_13.png
-Took 18ms (1000ms timeout)
-Output:
-----------------------------------------------------------------
-[EasyPNG]: Failed to open ./out.png
-
-----------------------------------------------------------------
-in_14_png [5 points]
-Result: FAILED: unit_tests.cpp:62: out.png != out_14.png
-Took 6ms (1000ms timeout)
-Output:
-----------------------------------------------------------------
-[EasyPNG]: Failed to open ./out.png
-
-----------------------------------------------------------------
-in_15_png [5 points]
-Result: FAILED: unit_tests.cpp:63: out.png != out_15.png
-Took 8ms (1000ms timeout)
-Output:
-----------------------------------------------------------------
-[EasyPNG]: Failed to open ./out.png
-
-----------------------------------------------------------------
-in_16_png [5 points]
-Result: FAILED: unit_tests.cpp:64: out.png != out_16.png
-Took 47ms (1000ms timeout)
-Output:
-----------------------------------------------------------------
-[EasyPNG]: Failed to open ./out.png
-
-----------------------------------------------------------------
-in_17_png [5 points]
-Result: FAILED: unit_tests.cpp:65: out.png != out_17.png
-Took 20ms (1000ms timeout)
-Output:
-----------------------------------------------------------------
-[EasyPNG]: Failed to open ./out.png
-
-
-----------------------------------------------------------------
-Total score...
-================================================================
-TOTAL SCORE: 15
+TOTAL SCORE: 100
 
