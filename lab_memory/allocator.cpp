@@ -17,6 +17,7 @@ Allocator::Allocator(const string & studentFile, const string & roomFile)
 	loadStudents(studentFile);
 	loadRooms(roomFile);
 }
+// clears the memory location of alpha and room
 Allocator::~Allocator()
 {
 	delete [] alpha;
