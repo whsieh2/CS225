@@ -16,7 +16,7 @@ Room::Room()
 Room::Room(const string & init_name, int init_capacity)
 	: name(init_name), capacity(init_capacity), max_letters(26), count(0), letterCount(0)
 {
-	letters = new Letter[max_letters];
+	letters = new Letter[26];
 }
 
 /**
@@ -53,7 +53,7 @@ Room::~Room()
  */
 void Room::addLetter(const Letter & L)
 {
-	letters[letterCount++] = L;
+	letters[letterCount++] = L; // writing to a memory location that doesn't exist.
 	count += L.count;
 }
 
@@ -83,7 +83,8 @@ void Room::print()
 void Room::clear()
 {
 	if (letters != NULL)
-		delete letters;
+		delete [] letters;
+		
 }
 
 /**
@@ -95,6 +96,10 @@ void Room::copy(const Room & other)
 	capacity    = other.capacity;
 	count       = other.count;
 	letterCount = other.letterCount;
-	letters     = other.letters;
+	letters 	= new Letter[26];
+	for (int i = 0; i < letterCount; i++)
+	{
+		letters[i]  = other.letters[i];
+	}	
 }
 
