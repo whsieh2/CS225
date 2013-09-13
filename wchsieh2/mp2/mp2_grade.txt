@@ -1,0 +1,7 @@
+Monad Autograder
+Testing mp2 at 2013-09-12 19:15:16
+
+"Anything that can go wrong will go wrong." ~ Murphy's Law
+
+Setting up test environment...
+Error: /dev/shm/geigle1/monad/fa13-cs225/wchsieh2/mp2/scene.h does not exist.
