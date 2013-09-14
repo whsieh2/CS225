@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp2 at 2013-09-13 00:44:15
+Testing mp2 at 2013-09-14 00:46:09
 
-"I don't try to be a threat to Microsoft, mainly because I don't really see them as competition. Especially not Windows -- the goals of Linux and Windows are simply so different." ~ Linus Torvalds
+"A computer lets you make more mistakes faster than any invention in human history–with the possible exceptions of handguns and tequila." ~ Mitch Radcliffe
 
 Setting up test environment...
 Error: /dev/shm/geigle1/monad/fa13-cs225/wchsieh2/mp2/scene.h does not exist.
