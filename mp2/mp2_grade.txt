@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp2 at 2013-09-14 00:46:09
+Testing mp2 at 2013-09-15 00:50:24
 
-"A computer lets you make more mistakes faster than any invention in human history–with the possible exceptions of handguns and tequila." ~ Mitch Radcliffe
+"If you're not failing every now and again, it's a sign you're not doing anything very innovative." ~ Woody Allen
 
 Setting up test environment...
 Error: /dev/shm/geigle1/monad/fa13-cs225/wchsieh2/mp2/scene.h does not exist.
