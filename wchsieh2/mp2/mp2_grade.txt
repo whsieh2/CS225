@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp2 at 2013-09-15 00:50:24
+Testing mp2 at 2013-09-16 00:54:18
 
-"If you're not failing every now and again, it's a sign you're not doing anything very innovative." ~ Woody Allen
+"When you say 'You suck', I think 'I win'." ~ Michael Lopp
 
 Setting up test environment...
 Error: /dev/shm/geigle1/monad/fa13-cs225/wchsieh2/mp2/scene.h does not exist.
