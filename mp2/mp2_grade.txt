@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp2 at 2013-09-16 00:54:18
+Testing mp2 at 2013-09-17 00:59:03
 
-"When you say 'You suck', I think 'I win'." ~ Michael Lopp
+"I think it's hacky, but maybe it's just good." ~ Sean Massung
 
 Setting up test environment...
 Error: /dev/shm/geigle1/monad/fa13-cs225/wchsieh2/mp2/scene.h does not exist.
