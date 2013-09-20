@@ -1,0 +1,23 @@
+Monad Autograder
+Testing lab_memory at 2013-09-20 02:35:25
+
+"Most software today is very much like an Egyptian pyramid with millions of bricks piled on top of each other, with no structural integrity, but just done by brute force and thousands of slaves." ~ Alan Kay
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+test_constructor (valgrind) [5 pts]  - passed
+test_allocate (valgrind)  . [5 pts]  - passed
+test_printrooms (valgrind)  [20 pts] - passed
+test_any_output . . . . . . [30 pts] - passed
+test_correct_output . . . . [40 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+
