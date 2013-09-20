@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp2 at 2013-09-19 01:09:55
+Testing mp2 at 2013-09-20 11:34:20
 
-"You *could* call it an ape, and that an ape, but that would just be phylogenic pettifogging." ~ D.A. Forsyth
+"Java is, in many ways, C++-." ~ Michael Feldman
 
 Setting up test environment...
 Error: /dev/shm/geigle1/monad/fa13-cs225/wchsieh2/mp2/scene.h does not exist.
