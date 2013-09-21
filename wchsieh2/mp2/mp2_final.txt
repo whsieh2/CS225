@@ -1,0 +1,48 @@
+Monad Autograder
+Testing mp2 at 2013-09-21 01:36:05
+
+"Measuring programming progress by lines of code is like measuring aircraft building progress by weight." ~ Bill Gates
+
+Setting up test environment...
+Compiling...
+================================================================
+Makefile:15: warning: overriding commands for target `testscene'
+Makefile:12: warning: ignoring old commands for target `testscene'
+Makefile:22: warning: overriding commands for target `testimage'
+Makefile:12: warning: ignoring old commands for target `testimage'
+cc1plus: warnings being treated as errors
+scene.cpp: In member function 'Image Scene::drawscene() const':
+scene.cpp:168: error: comparison between signed and unsigned integer expressions
+scene.cpp:170: error: comparison between signed and unsigned integer expressions
+scene.cpp:184: error: comparison between signed and unsigned integer expressions
+scene.cpp:186: error: comparison between signed and unsigned integer expressions
+cc1plus: warnings being treated as errors
+scene.cpp: In member function 'Image Scene::drawscene() const':
+scene.cpp:168: error: comparison between signed and unsigned integer expressions
+scene.cpp:170: error: comparison between signed and unsigned integer expressions
+scene.cpp:184: error: comparison between signed and unsigned integer expressions
+scene.cpp:186: error: comparison between signed and unsigned integer expressions
+ld: no input files
+g++: scene.o: No such file or directory
+make: *** [testscene] Error 1
+Makefile:15: warning: overriding commands for target `testscene'
+Makefile:12: warning: ignoring old commands for target `testscene'
+Makefile:22: warning: overriding commands for target `testimage'
+Makefile:12: warning: ignoring old commands for target `testimage'
+../source/cc-monad g++  testimage.o png.o rgbapixel.o image.o -lpng -o testimage
+
+
+Running tests...
+================================================================
+InvertColorsEven  . . [8 pts] - passed
+FlipLeftEven  . . . . [5 pts] - passed
+FlipLeftOdd . . . . . [5 pts] - passed
+AdjustBrightnessEven  [6 pts] - passed
+AdjustBrightnessEven2 [3 pts] - passed
+AdjustBrightnessEven3 [3 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 30
+
