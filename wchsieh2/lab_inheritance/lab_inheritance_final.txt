@@ -1,0 +1,115 @@
+Monad Autograder
+Testing lab_inheritance at 2013-09-23 01:32:28
+
+"There are 10 types of people in the world. Those who understand binary, those who don't, and those who didn't expect this joke to be in base 3." ~ Anonymous
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+test_virtual_perim  . . . . . . . . [10 pts] - passed
+test_virtual_area . . . . . . . . . [10 pts] - passed
+test_destructor (valgrind)  . . . . [20 pts] - passed
+test_constructor  . . . . . . . . . [20 pts] - passed
+test_drawable_destructor (valgrind) [10 pts] - FAILED: Directly lost memory leaks
+test_truck_draw . . . . . . . . . . [10 pts] - passed
+test_slicing  . . . . . . . . . . . [20 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 90
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+test_drawable_destructor (run under valgrind) [10 points]
+Result: FAILED: Directly lost memory leaks
+Took unknown time (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Running test_drawable_destructor [worth 10 points, output below]
+==17035== 40 bytes in 1 blocks are definitely lost in loss record 6 of 10
+==17035==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==17035==    by 0x41EBDD: Truck::Truck(Vector2 const&) (truck.cpp:48)
+==17035==    by 0x417D73: proxy_test::test_drawable_destructor(util::sizedpipestream<512ul>&) (unit_tests.cpp:77)
+==17035==    by 0x407AA1: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==17035==    by 0x4068DB: proxy::test_execution::child_test() (proxy.cpp:549)
+==17035==    by 0x4062FA: proxy::test_execution::child() (proxy.cpp:434)
+==17035==    by 0x4094FC: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (proxy.cpp:508)
+==17035==    by 0x40675F: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (proxy.cpp:489)
+==17035==    by 0x4055E4: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (proxy.cpp:250)
+==17035==    by 0x4054EC: proxy::RunTests::run_single_test(char const*) (proxy.cpp:238)
+==17035==    by 0x405354: proxy::RunTests::execute_by_mode() (proxy.cpp:223)
+==17035==    by 0x405305: proxy::RunTests::execute() (proxy.cpp:214)
+==17035== 
+==17035== 40 bytes in 1 blocks are definitely lost in loss record 7 of 10
+==17035==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==17035==    by 0x41ECA5: Truck::Truck(Vector2 const&) (truck.cpp:48)
+==17035==    by 0x417D73: proxy_test::test_drawable_destructor(util::sizedpipestream<512ul>&) (unit_tests.cpp:77)
+==17035==    by 0x407AA1: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==17035==    by 0x4068DB: proxy::test_execution::child_test() (proxy.cpp:549)
+==17035==    by 0x4062FA: proxy::test_execution::child() (proxy.cpp:434)
+==17035==    by 0x4094FC: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (proxy.cpp:508)
+==17035==    by 0x40675F: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (proxy.cpp:489)
+==17035==    by 0x4055E4: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (proxy.cpp:250)
+==17035==    by 0x4054EC: proxy::RunTests::run_single_test(char const*) (proxy.cpp:238)
+==17035==    by 0x405354: proxy::RunTests::execute_by_mode() (proxy.cpp:223)
+==17035==    by 0x405305: proxy::RunTests::execute() (proxy.cpp:214)
+==17035== 
+==17035== 40 bytes in 1 blocks are definitely lost in loss record 8 of 10
+==17035==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==17035==    by 0x41EDCB: Truck::Truck(Vector2 const&) (truck.cpp:48)
+==17035==    by 0x417D73: proxy_test::test_drawable_destructor(util::sizedpipestream<512ul>&) (unit_tests.cpp:77)
+==17035==    by 0x407AA1: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==17035==    by 0x4068DB: proxy::test_execution::child_test() (proxy.cpp:549)
+==17035==    by 0x4062FA: proxy::test_execution::child() (proxy.cpp:434)
+==17035==    by 0x4094FC: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (proxy.cpp:508)
+==17035==    by 0x40675F: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (proxy.cpp:489)
+==17035==    by 0x4055E4: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (proxy.cpp:250)
+==17035==    by 0x4054EC: proxy::RunTests::run_single_test(char const*) (proxy.cpp:238)
+==17035==    by 0x405354: proxy::RunTests::execute_by_mode() (proxy.cpp:223)
+==17035==    by 0x405305: proxy::RunTests::execute() (proxy.cpp:214)
+==17035== 
+==17035== 40 bytes in 1 blocks are definitely lost in loss record 9 of 10
+==17035==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==17035==    by 0x41EF15: Truck::Truck(Vector2 const&) (truck.cpp:48)
+==17035==    by 0x417D73: proxy_test::test_drawable_destructor(util::sizedpipestream<512ul>&) (unit_tests.cpp:77)
+==17035==    by 0x407AA1: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==17035==    by 0x4068DB: proxy::test_execution::child_test() (proxy.cpp:549)
+==17035==    by 0x4062FA: proxy::test_execution::child() (proxy.cpp:434)
+==17035==    by 0x4094FC: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (proxy.cpp:508)
+==17035==    by 0x40675F: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (proxy.cpp:489)
+==17035==    by 0x4055E4: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (proxy.cpp:250)
+==17035==    by 0x4054EC: proxy::RunTests::run_single_test(char const*) (proxy.cpp:238)
+==17035==    by 0x405354: proxy::RunTests::execute_by_mode() (proxy.cpp:223)
+==17035==    by 0x405305: proxy::RunTests::execute() (proxy.cpp:214)
+==17035== 
+==17035== 200 (40 direct, 160 indirect) bytes in 1 blocks are definitely lost in loss record 10 of 10
+==17035==    at 0x4A0674C: operator new[](unsigned long) (vg_replace_malloc.c:305)
+==17035==    by 0x41EB6D: Truck::Truck(Vector2 const&) (truck.cpp:48)
+==17035==    by 0x417D73: proxy_test::test_drawable_destructor(util::sizedpipestream<512ul>&) (unit_tests.cpp:77)
+==17035==    by 0x407AA1: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==17035==    by 0x4068DB: proxy::test_execution::child_test() (proxy.cpp:549)
+==17035==    by 0x4062FA: proxy::test_execution::child() (proxy.cpp:434)
+==17035==    by 0x4094FC: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (proxy.cpp:508)
+==17035==    by 0x40675F: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (proxy.cpp:489)
+==17035==    by 0x4055E4: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (proxy.cpp:250)
+==17035==    by 0x4054EC: proxy::RunTests::run_single_test(char const*) (proxy.cpp:238)
+==17035==    by 0x405354: proxy::RunTests::execute_by_mode() (proxy.cpp:223)
+==17035==    by 0x405305: proxy::RunTests::execute() (proxy.cpp:214)
+==17035== 
+Result: FAILED:
+Directly lost memory leaks
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 90
+
