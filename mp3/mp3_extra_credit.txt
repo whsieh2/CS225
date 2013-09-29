@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp3.1 at 2013-09-28 02:11:56
+Testing mp3.1 at 2013-09-29 02:13:19
 
-"I have never let my schooling interfere with my education." ~ Mark Twain
+"In the absence of our leader, I'm assuming control." ~ Kyle Johnson
 
 Setting up test environment...
 Compiling...
