@@ -20,11 +20,13 @@ PNG ImageTools::verticalFlip(const PNG & source)
     int height = source.height();
     PNG output(width, height);
 
+	#pragma omp parallel for
     for(int i = 0; i < width; ++i)
     {
         for(int j = 0; j < height; ++j)
         {
             // flip! 
+            *output((width-i-1),j) = *source(i,j);
         }
     }
 
@@ -53,11 +55,14 @@ PNG ImageTools::removeColor(const PNG & source, const Color & color)
             *output(i, j) = *source(i, j);
             switch(color)
             {
-                case RED:
+                case RED: 
+                	output(i,j) -> red=0;
                     break;
-                case GREEN:
+                case GREEN: 
+                	output(i,j) -> green=0;
                     break;
-                case BLUE:
+                case BLUE: 
+                	output(i,j) -> blue=0;
                     break;
             }
         }
