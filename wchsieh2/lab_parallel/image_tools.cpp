@@ -48,6 +48,7 @@ PNG ImageTools::removeColor(const PNG & source, const Color & color)
     int height = source.height();
     PNG output(width, height);
 
+	#pragma omp parallel for
     for(int i = 0; i < width; ++i)
     {
         for(int j = 0; j < height; ++j)
