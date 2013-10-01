@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp3.1 at 2013-09-30 02:17:48
+Testing mp3.1 at 2013-10-01 02:16:57
 
-"Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. Code for readability." ~ John Woods
+"It is practically impossible to teach good programming to students that have had a prior exposure to BASIC: as potential programmers they are mentally mutilated beyond hope of regeneration." ~ Edsger Dijkstra
 
 Setting up test environment...
 Compiling...
