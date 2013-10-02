@@ -17,6 +17,7 @@
 template <class T>
 List<T>::~List()
 {
+	clear();
     /// @todo Graded in MP3.1
 }
 
@@ -27,6 +28,13 @@ List<T>::~List()
 template <class T>
 void List<T>::clear()
 {
+	
+	while (head)
+	{
+		tail=head->next;
+		delete head;
+		head=tail;
+	}
     /// @todo Graded in MP3.1
 }
 
@@ -38,9 +46,26 @@ void List<T>::clear()
  */
 template <class T>
 void List<T>::insertFront(T const & ndata)
-{
+{	
+	ListNode * newnode = new ListNode(ndata);
+	if (head != NULL)
+	{
+		newnode -> next = head ;
+		head ->prev = newnode;
+		head = newnode;
+		length++;
+		head -> prev = NULL;
+	}
+	else
+	{
+		head = newnode;
+		tail = newnode;
+		length++;
+	}
+	newnode = NULL;
+	
     /// @todo Graded in MP3.1
-}
+}	
 
 /**
  * Inserts a new node at the back of the List.
@@ -52,6 +77,24 @@ template <class T>
 void List<T>::insertBack( const T & ndata )
 {
     /// @todo Graded in MP3.1
+    ListNode * newnode = new ListNode(ndata);
+    if (tail != NULL)
+    {
+    	tail -> next = newnode;
+    	newnode -> prev = tail;
+		tail = newnode;
+		tail -> next = NULL;
+		length++;
+		
+    }
+    else
+	{
+		head = newnode;
+		tail = newnode;
+		length++;
+	}
+	newnode = NULL;
+    
 }
 
 
@@ -78,6 +121,26 @@ void List<T>::reverse()
 template <class T>
 void List<T>::reverse( ListNode * & startPoint, ListNode * & endPoint )
 {
+	
+	ListNode * temp1 = head;
+	ListNode * temp2 = head;
+	
+	while (temp1!=tail)
+	{
+		temp2 = temp1;
+		temp1 = temp1->next;
+		temp2->next = temp2->prev;
+		temp2->prev=temp1;
+		
+	}
+	temp1 -> next = temp2;
+	temp1 -> prev= NULL;
+	tail = head;
+	head = temp1;
+	temp1 = NULL;
+	temp2 = NULL;
+	
+	
     /// @todo Graded in MP3.1
 }
 
@@ -107,6 +170,9 @@ void List<T>::reverseNth( int n )
 template <class T>
 void List<T>::waterfall()
 {
+
+	//implement reverse
+	//but loop it.
     /// @todo Graded in MP3.1
 }
 
