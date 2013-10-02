@@ -154,6 +154,43 @@ void List<T>::reverse( ListNode * & startPoint, ListNode * & endPoint )
 template <class T>
 void List<T>::reverseNth( int n )
 {
+	if (length <=1 || n == 1)
+        return;
+        
+    //just do normal reverse if block size is the full length
+    if (n == length)
+        reverse();
+    
+    //setup node pointers
+    ListNode *temp = head;
+    ListNode *new_head = head;
+    ListNode *new_tail = NULL;
+
+    //store block size for counter
+    int count = n;
+
+	while(temp != NULL)
+	{
+	if (count==0)
+	{
+		if (new_head == head)
+		{
+			head = new_tail;
+		}
+		reverse(new_head,new_tail);
+		count = n;
+		new_head = temp;
+		new_tail = temp;
+       }
+
+       if (temp->next == NULL)
+       {
+            reverse(new_head,temp);
+       }
+       new_tail = temp;
+       temp = temp->next;
+       count--;
+    }
     /// @todo Graded in MP3.1
 }
 
@@ -170,6 +207,38 @@ void List<T>::reverseNth( int n )
 template <class T>
 void List<T>::waterfall()
 {
+	 if (length == 0)
+        return;
+    
+    int num = 1;
+
+    ListNode * temp1 = head;
+    ListNode * temp2 = head;
+
+    while ((temp1->next != tail) && (temp1 != tail) && (temp1 != NULL))
+    {
+        while (num>0)
+        {
+            temp2 = temp1;
+            temp1 = temp1 ->next;
+            num--;
+        }
+
+        temp2->next = temp1 ->next;
+        temp1->next->prev = temp2;
+
+        tail -> next = temp1;
+        temp1 -> next = NULL;
+        temp1 -> prev = tail;
+        tail = temp1;
+
+        temp1 = temp2->next;
+
+        num = 1;
+    }
+
+    temp1 = NULL;
+    temp2 = NULL;
 
 	//implement reverse
 	//but loop it.
