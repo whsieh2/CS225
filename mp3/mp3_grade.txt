@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp3 at 2013-10-03 02:49:45
+Testing mp3 at 2013-10-04 02:47:47
 
-"You *could* call it an ape, and that an ape, but that would just be phylogenic pettifogging." ~ D.A. Forsyth
+"Anti-intellectualism has been a constant thread winding its way through our political and cultural life, nurtured by the false notion that democracy means that 'my ignorance is just as good as your knowledge.'" ~ Isaac Asimov
 
 Setting up test environment...
 Compiling...
