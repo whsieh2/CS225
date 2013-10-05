@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp3 at 2013-10-04 02:47:47
+Testing mp3 at 2013-10-05 15:39:33
 
-"Anti-intellectualism has been a constant thread winding its way through our political and cultural life, nurtured by the false notion that democracy means that 'my ignorance is just as good as your knowledge.'" ~ Isaac Asimov
+"I hear and I forget; I see and I remember; I do and I understand." ~ Confucius
 
 Setting up test environment...
 Compiling...
