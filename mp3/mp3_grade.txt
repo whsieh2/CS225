@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp3 at 2013-10-05 15:39:33
+Testing mp3 at 2013-10-06 02:53:12
 
-"I hear and I forget; I see and I remember; I do and I understand." ~ Confucius
+"I've seen it on Google Maps; I think I know what I'm talking about" ~ Kyle Johnson
 
 Setting up test environment...
 Compiling...
