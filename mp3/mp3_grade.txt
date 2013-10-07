@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp3 at 2013-10-06 02:53:12
+Testing mp3 at 2013-10-07 03:02:45
 
-"I've seen it on Google Maps; I think I know what I'm talking about" ~ Kyle Johnson
+"If debugging is the process of removing bugs, then programming must be the process of putting them in." ~ Edsger W. Dijkstra
 
 Setting up test environment...
 Compiling...
