@@ -415,6 +415,26 @@ void List<T>::sort()
 template <class T>
 typename List<T>::ListNode * List<T>::mergesort(ListNode * start, int chainLength)
 {
-    /// @todo Graded in MP3.2
+    ListNode * left;
+    ListNode * right;
+    int leftPart, rightPart;
+    
+    if (chainLength <= 1)
+    	return start;
+    if (chainLength %2 ==0)
+    {
+    	leftPart = chainLength/2;
+    	rightPart = chainLength/2;
+    }
+    else
+    {
+    	leftPart = chainLength/2;
+    	rightPart = chainLength/2 + 1;
+    }
+    left = start;
+    right = split(start, leftPart);
+    left = mergesort(left, leftPart);
+    right = mergesort(right, rightPart);
+    return merge(left,right);
     return NULL; // change me!
 }
