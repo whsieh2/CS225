@@ -1,0 +1,257 @@
+Monad Autograder
+Testing mp3 at 2013-10-09 03:24:01
+
+"For humans, honesty is a matter of degree. Engineers are always honest in matters of technology and human relationships. That's why it's a good idea to keep engineers away from customers, romantic interests, and other people who can't handle the truth." ~ Scott Adams
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+testInsertFront  . . . . . . . . . . [2 pts]  - passed
+testInsertBack . . . . . . . . . . . [2 pts]  - passed
+testDestructor10 (valgrind)  . . . . [3 pts]  - passed
+testDestructor37 (valgrind)  . . . . [3 pts]  - passed
+testReverse20_size . . . . . . . . . [1 pts]  - passed
+testReverse20_forward  . . . . . . . [1 pts]  - passed
+testReverse20_backward . . . . . . . [1 pts]  - passed
+testReverse37_size . . . . . . . . . [1 pts]  - passed
+testReverse37_forward  . . . . . . . [1 pts]  - passed
+testReverse37_backward . . . . . . . [1 pts]  - passed
+testReverseEmpty (valgrind)  . . . . [1 pts]  - passed
+testReverse20_memory (valgrind)  . . [1 pts]  - passed
+testReverseNth20_2_size  . . . . . . [1 pts]  - FAILED: Timed out (1000ms)
+testReverseNth20_2_forward . . . . . [1 pts]  - FAILED: Timed out (1000ms)
+testReverseNth20_2_backward  . . . . [1 pts]  - FAILED: Timed out (1000ms)
+testReverseNth37_4_size  . . . . . . [1 pts]  - FAILED: Timed out (1000ms)
+testReverseNth37_4_forward . . . . . [1 pts]  - FAILED: Timed out (1000ms)
+testReverseNth37_4_backward  . . . . [1 pts]  - FAILED: Timed out (1000ms)
+testReverseNth37_37  . . . . . . . . [1 pts]  - passed
+testReverseNth37_4_memory (valgrind) [1 pts]  - FAILED: Timed out (10000ms)
+testReverseNthEmpty (valgrind) . . . [1 pts]  - passed
+testWaterfall4_size  . . . . . . . . [1 pts]  - passed
+testWaterfall4_forward . . . . . . . [1 pts]  - passed
+testWaterfall4_backward  . . . . . . [2 pts]  - passed
+testWaterfall7_size  . . . . . . . . [1 pts]  - passed
+testWaterfall7_forward . . . . . . . [1 pts]  - passed
+testWaterfall7_backward  . . . . . . [2 pts]  - passed
+testWaterfall12_size . . . . . . . . [1 pts]  - passed
+testWaterfall12_forward  . . . . . . [1 pts]  - passed
+testWaterfall12_backward . . . . . . [2 pts]  - passed
+testWaterfall7_memory (valgrind) . . [3 pts]  - passed
+testWaterfall7_empty (valgrind)  . . [3 pts]  - passed
+testSplit5_this_size . . . . . . . . [1 pts]  - passed
+testSplit5_this_forward  . . . . . . [1 pts]  - passed
+testSplit5_this_backward . . . . . . [1 pts]  - passed
+testSplit5_split_size  . . . . . . . [1 pts]  - passed
+testSplit5_split_forward . . . . . . [1 pts]  - passed
+testSplit5_split_backward  . . . . . [1 pts]  - passed
+testSplit5_mem (valgrind)  . . . . . [3 pts]  - passed
+testMerge_size . . . . . . . . . . . [1 pts]  - passed
+testMerge_forward  . . . . . . . . . [1 pts]  - passed
+testMerge_backward . . . . . . . . . [1 pts]  - passed
+testMerge_mem (valgrind) . . . . . . [3 pts]  - passed
+testSort16p_s  . . . . . . . . . . . [1 pts]  - passed
+testSort16p_f  . . . . . . . . . . . [2 pts]  - passed
+testSort16p_b  . . . . . . . . . . . [2 pts]  - FAILED: Timed out (1000ms)
+testSort20p_s  . . . . . . . . . . . [1 pts]  - passed
+testSort20p_f  . . . . . . . . . . . [2 pts]  - passed
+testSort20p_b  . . . . . . . . . . . [2 pts]  - FAILED: Timed out (1000ms)
+testSort27p_s  . . . . . . . . . . . [1 pts]  - passed
+testSort27p_f  . . . . . . . . . . . [2 pts]  - passed
+testSort27p_b  . . . . . . . . . . . [2 pts]  - passed
+testSortEmpty  . . . . . . . . . . . [5 pts]  - passed
+testSort259p_s . . . . . . . . . . . [1 pts]  - passed
+testSort259p_f . . . . . . . . . . . [2 pts]  - passed
+testSort259p_b . . . . . . . . . . . [2 pts]  - FAILED: Timed out (1000ms)
+testSortMemLeak (valgrind) . . . . . [5 pts]  - FAILED: Timed out (10000ms)
+testSortNlogN  . . . . . . . . . . . [10 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 82
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+testReverseNth20_2_size [1 points]
+Result: FAILED: Timed out (1000ms)
+Took 1000ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testReverseNth20_2_forward [1 points]
+Result: FAILED: Timed out (1000ms)
+Took 1000ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testReverseNth20_2_backward [1 points]
+Result: FAILED: Timed out (1000ms)
+Took 1000ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testReverseNth37_4_size [1 points]
+Result: FAILED: Timed out (1000ms)
+Took 1000ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testReverseNth37_4_forward [1 points]
+Result: FAILED: Timed out (1000ms)
+Took 1000ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testReverseNth37_4_backward [1 points]
+Result: FAILED: Timed out (1000ms)
+Took 1000ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testReverseNth37_4_memory (run under valgrind) [1 points]
+Result: FAILED: Timed out (10000ms)
+Took unknown time (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Running testReverseNth37_4_memory [worth 1 points, output below]
+==31121== 31 bytes in 1 blocks are possibly lost in loss record 2 of 10
+==31121==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==31121==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==31121==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==31121==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==31121==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
+==31121==    by 0x40776D: __static_initialization_and_destruction_0(int, int) (proxy.cpp:31)
+==31121==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
+==31121==    by 0x4240C5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==31121==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==31121== 
+==31121== 33 bytes in 1 blocks are possibly lost in loss record 3 of 10
+==31121==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==31121==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==31121==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==31121==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==31121==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
+==31121==    by 0x407781: __static_initialization_and_destruction_0(int, int) (proxy.cpp:37)
+==31121==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
+==31121==    by 0x4240C5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==31121==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==31121== 
+==31121== 37 bytes in 1 blocks are possibly lost in loss record 4 of 10
+==31121==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==31121==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==31121==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==31121==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==31121==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
+==31121==    by 0x407795: __static_initialization_and_destruction_0(int, int) (proxy.cpp:43)
+==31121==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
+==31121==    by 0x4240C5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==31121==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==31121== 
+==31121== 132 bytes in 1 blocks are possibly lost in loss record 9 of 10
+==31121==    at 0x4A05FDE: malloc (vg_replace_malloc.c:236)
+==31121==    by 0x3A82CBB746: __cxa_allocate_exception (in /usr/lib64/libstdc++.so.6.0.13)
+==31121==    by 0x40959F: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (proxy.cpp:522)
+==31121==    by 0x40675F: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (proxy.cpp:489)
+==31121==    by 0x4055E4: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (proxy.cpp:250)
+==31121==    by 0x4054EC: proxy::RunTests::run_single_test(char const*) (proxy.cpp:238)
+==31121==    by 0x405354: proxy::RunTests::execute_by_mode() (proxy.cpp:223)
+==31121==    by 0x405305: proxy::RunTests::execute() (proxy.cpp:214)
+==31121==    by 0x404AA0: main (proxy.cpp:104)
+==31121== 
+Result: FAILED:
+Timed out (10000ms)
+
+----------------------------------------------------------------
+testSort16p_b [2 points]
+Result: FAILED: Timed out (1000ms)
+Took 1000ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testSort20p_b [2 points]
+Result: FAILED: Timed out (1000ms)
+Took 1000ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testSort259p_b [2 points]
+Result: FAILED: Timed out (1000ms)
+Took 1000ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testSortMemLeak (run under valgrind) [5 points]
+Result: FAILED: Timed out (10000ms)
+Took unknown time (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Running testSortMemLeak [worth 5 points, output below]
+==31199== 31 bytes in 1 blocks are possibly lost in loss record 2 of 10
+==31199==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==31199==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==31199==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==31199==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==31199==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
+==31199==    by 0x40776D: __static_initialization_and_destruction_0(int, int) (proxy.cpp:31)
+==31199==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
+==31199==    by 0x4240C5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==31199==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==31199== 
+==31199== 33 bytes in 1 blocks are possibly lost in loss record 3 of 10
+==31199==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==31199==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==31199==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==31199==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==31199==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
+==31199==    by 0x407781: __static_initialization_and_destruction_0(int, int) (proxy.cpp:37)
+==31199==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
+==31199==    by 0x4240C5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==31199==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==31199== 
+==31199== 37 bytes in 1 blocks are possibly lost in loss record 4 of 10
+==31199==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==31199==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==31199==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==31199==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==31199==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
+==31199==    by 0x407795: __static_initialization_and_destruction_0(int, int) (proxy.cpp:43)
+==31199==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
+==31199==    by 0x4240C5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==31199==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==31199== 
+==31199== 132 bytes in 1 blocks are possibly lost in loss record 9 of 10
+==31199==    at 0x4A05FDE: malloc (vg_replace_malloc.c:236)
+==31199==    by 0x3A82CBB746: __cxa_allocate_exception (in /usr/lib64/libstdc++.so.6.0.13)
+==31199==    by 0x40959F: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (proxy.cpp:522)
+==31199==    by 0x40675F: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (proxy.cpp:489)
+==31199==    by 0x4055E4: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (proxy.cpp:250)
+==31199==    by 0x4054EC: proxy::RunTests::run_single_test(char const*) (proxy.cpp:238)
+==31199==    by 0x405354: proxy::RunTests::execute_by_mode() (proxy.cpp:223)
+==31199==    by 0x405305: proxy::RunTests::execute() (proxy.cpp:214)
+==31199==    by 0x404AA0: main (proxy.cpp:104)
+==31199== 
+Result: FAILED:
+Timed out (10000ms)
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 82
+
