@@ -121,7 +121,10 @@ void List<T>::reverse()
 template <class T>
 void List<T>::reverse( ListNode * & startPoint, ListNode * & endPoint )
 {
-	
+
+	if (length == 0)
+		return;
+		
 	ListNode * temp1 = head;
 	ListNode * temp2 = head;
 	
@@ -141,6 +144,9 @@ void List<T>::reverse( ListNode * & startPoint, ListNode * & endPoint )
 	temp2 = NULL;
 	
 	
+	
+	
+	
     /// @todo Graded in MP3.1
 }
 
@@ -154,43 +160,47 @@ void List<T>::reverse( ListNode * & startPoint, ListNode * & endPoint )
 template <class T>
 void List<T>::reverseNth( int n )
 {
-	if (length <=1 || n == 1)
-        return;
-        
-    //just do normal reverse if block size is the full length
-    if (n == length)
-        reverse();
-    
-    //setup node pointers
-    ListNode *temp = head;
-    ListNode *new_head = head;
-    ListNode *new_tail = NULL;
-
-    //store block size for counter
-    int count = n;
-
-	while(temp != NULL)
+	if(head == NULL)
+		return;
+	if (n == length)
 	{
-	if (count==0)
-	{
-		if (new_head == head)
+		reverse();
+		return;
+	}
+	
+	ListNode * headTemp = head;
+	ListNode * endTemp = head; // for now
+	ListNode * temp = NULL;
+	
+	int count = 0;
+	if(length%n == 0)
+		count = (length/n);
+	else 
+		count = (length/n) + 1;
+	
+	for(int j =0;j < count; j++){ //iterate over the entire list in chunks
+		for (int i = 0; i < n-1; i++) // find the tail of the group
 		{
-			head = new_tail;
+			
+			if(endTemp->next != NULL)
+				endTemp = endTemp->next;
+		} 
+		if(j == 0) //only the first iteration
+		{
+			reverse(head,endTemp);
+			head = head; 
 		}
-		reverse(new_head,new_tail);
-		count = n;
-		new_head = temp;
-		new_tail = temp;
-       }
-
-       if (temp->next == NULL)
-       {
-            reverse(new_head,temp);
-       }
-       new_tail = temp;
-       temp = temp->next;
-       count--;
-    }
+		else 
+		{
+			reverse(headTemp,endTemp);
+			headTemp->prev = temp;	//correcting pointers
+			temp->next = headTemp;
+			tail = endTemp;
+		}
+		temp = endTemp;			//correct all the pointers
+		headTemp = endTemp->next;
+		endTemp = endTemp->next;
+	} 
     /// @todo Graded in MP3.1
 }
 
@@ -308,8 +318,16 @@ List<T> List<T>::split(int splitPoint)
 template <class T>
 typename List<T>::ListNode * List<T>::split(ListNode * start, int splitPoint)
 {
-    /// @todo Graded in MP3.2
-    return NULL; // change me!
+	
+  	ListNode * temp = start;
+    int num = splitPoint;
+    while (num--)
+    {
+        temp = temp->next;
+    }
+    if (temp->prev != NULL)
+        temp->prev->next = NULL;
+    return temp;
 }
 
 /**
@@ -352,8 +370,23 @@ void List<T>::mergeWith(List<T> & otherList)
 template <class T>
 typename List<T>::ListNode * List<T>::merge(ListNode * first, ListNode * second)
 {
-    /// @todo Graded in MP3.2
-    return NULL; // change me!
+	if(first == NULL)
+		return second;
+	else if(second == NULL)
+		return first;
+	else if((first->data) < (second->data))
+	{
+		first->next = merge(first->next,second);
+		first->next->prev = first; //corrects pointers
+		return first;
+	}
+	else
+	{
+		second->next = merge(first,second->next);
+		second->next->prev = second; //corrects pointers
+		return second;
+	}
+ 
 }
 
 /**
