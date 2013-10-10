@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp3 at 2013-10-09 03:24:01
+Testing mp3 at 2013-10-10 03:26:19
 
-"For humans, honesty is a matter of degree. Engineers are always honest in matters of technology and human relationships. That's why it's a good idea to keep engineers away from customers, romantic interests, and other people who can't handle the truth." ~ Scott Adams
+"If you think you can do it all, you're thinking too small." ~ Michael Lopp
 
 Setting up test environment...
 Compiling...
@@ -127,50 +127,50 @@ Took unknown time (10000ms timeout)
 Output:
 ----------------------------------------------------------------
 Running testReverseNth37_4_memory [worth 1 points, output below]
-==31121== 31 bytes in 1 blocks are possibly lost in loss record 2 of 10
-==31121==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
-==31121==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
-==31121==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
-==31121==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
-==31121==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
-==31121==    by 0x40776D: __static_initialization_and_destruction_0(int, int) (proxy.cpp:31)
-==31121==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
-==31121==    by 0x4240C5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
-==31121==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
-==31121== 
-==31121== 33 bytes in 1 blocks are possibly lost in loss record 3 of 10
-==31121==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
-==31121==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
-==31121==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
-==31121==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
-==31121==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
-==31121==    by 0x407781: __static_initialization_and_destruction_0(int, int) (proxy.cpp:37)
-==31121==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
-==31121==    by 0x4240C5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
-==31121==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
-==31121== 
-==31121== 37 bytes in 1 blocks are possibly lost in loss record 4 of 10
-==31121==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
-==31121==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
-==31121==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
-==31121==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
-==31121==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
-==31121==    by 0x407795: __static_initialization_and_destruction_0(int, int) (proxy.cpp:43)
-==31121==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
-==31121==    by 0x4240C5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
-==31121==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
-==31121== 
-==31121== 132 bytes in 1 blocks are possibly lost in loss record 9 of 10
-==31121==    at 0x4A05FDE: malloc (vg_replace_malloc.c:236)
-==31121==    by 0x3A82CBB746: __cxa_allocate_exception (in /usr/lib64/libstdc++.so.6.0.13)
-==31121==    by 0x40959F: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (proxy.cpp:522)
-==31121==    by 0x40675F: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (proxy.cpp:489)
-==31121==    by 0x4055E4: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (proxy.cpp:250)
-==31121==    by 0x4054EC: proxy::RunTests::run_single_test(char const*) (proxy.cpp:238)
-==31121==    by 0x405354: proxy::RunTests::execute_by_mode() (proxy.cpp:223)
-==31121==    by 0x405305: proxy::RunTests::execute() (proxy.cpp:214)
-==31121==    by 0x404AA0: main (proxy.cpp:104)
-==31121== 
+==8787== 31 bytes in 1 blocks are possibly lost in loss record 2 of 10
+==8787==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==8787==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==8787==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==8787==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==8787==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
+==8787==    by 0x40776D: __static_initialization_and_destruction_0(int, int) (proxy.cpp:31)
+==8787==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
+==8787==    by 0x4240C5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==8787==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==8787== 
+==8787== 33 bytes in 1 blocks are possibly lost in loss record 3 of 10
+==8787==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==8787==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==8787==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==8787==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==8787==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
+==8787==    by 0x407781: __static_initialization_and_destruction_0(int, int) (proxy.cpp:37)
+==8787==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
+==8787==    by 0x4240C5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==8787==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==8787== 
+==8787== 37 bytes in 1 blocks are possibly lost in loss record 4 of 10
+==8787==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==8787==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==8787==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==8787==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==8787==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
+==8787==    by 0x407795: __static_initialization_and_destruction_0(int, int) (proxy.cpp:43)
+==8787==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
+==8787==    by 0x4240C5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==8787==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==8787== 
+==8787== 132 bytes in 1 blocks are possibly lost in loss record 9 of 10
+==8787==    at 0x4A05FDE: malloc (vg_replace_malloc.c:236)
+==8787==    by 0x3A82CBB746: __cxa_allocate_exception (in /usr/lib64/libstdc++.so.6.0.13)
+==8787==    by 0x40959F: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (proxy.cpp:522)
+==8787==    by 0x40675F: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (proxy.cpp:489)
+==8787==    by 0x4055E4: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (proxy.cpp:250)
+==8787==    by 0x4054EC: proxy::RunTests::run_single_test(char const*) (proxy.cpp:238)
+==8787==    by 0x405354: proxy::RunTests::execute_by_mode() (proxy.cpp:223)
+==8787==    by 0x405305: proxy::RunTests::execute() (proxy.cpp:214)
+==8787==    by 0x404AA0: main (proxy.cpp:104)
+==8787== 
 Result: FAILED:
 Timed out (10000ms)
 
@@ -202,50 +202,50 @@ Took unknown time (10000ms timeout)
 Output:
 ----------------------------------------------------------------
 Running testSortMemLeak [worth 5 points, output below]
-==31199== 31 bytes in 1 blocks are possibly lost in loss record 2 of 10
-==31199==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
-==31199==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
-==31199==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
-==31199==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
-==31199==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
-==31199==    by 0x40776D: __static_initialization_and_destruction_0(int, int) (proxy.cpp:31)
-==31199==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
-==31199==    by 0x4240C5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
-==31199==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
-==31199== 
-==31199== 33 bytes in 1 blocks are possibly lost in loss record 3 of 10
-==31199==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
-==31199==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
-==31199==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
-==31199==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
-==31199==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
-==31199==    by 0x407781: __static_initialization_and_destruction_0(int, int) (proxy.cpp:37)
-==31199==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
-==31199==    by 0x4240C5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
-==31199==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
-==31199== 
-==31199== 37 bytes in 1 blocks are possibly lost in loss record 4 of 10
-==31199==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
-==31199==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
-==31199==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
-==31199==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
-==31199==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
-==31199==    by 0x407795: __static_initialization_and_destruction_0(int, int) (proxy.cpp:43)
-==31199==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
-==31199==    by 0x4240C5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
-==31199==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
-==31199== 
-==31199== 132 bytes in 1 blocks are possibly lost in loss record 9 of 10
-==31199==    at 0x4A05FDE: malloc (vg_replace_malloc.c:236)
-==31199==    by 0x3A82CBB746: __cxa_allocate_exception (in /usr/lib64/libstdc++.so.6.0.13)
-==31199==    by 0x40959F: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (proxy.cpp:522)
-==31199==    by 0x40675F: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (proxy.cpp:489)
-==31199==    by 0x4055E4: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (proxy.cpp:250)
-==31199==    by 0x4054EC: proxy::RunTests::run_single_test(char const*) (proxy.cpp:238)
-==31199==    by 0x405354: proxy::RunTests::execute_by_mode() (proxy.cpp:223)
-==31199==    by 0x405305: proxy::RunTests::execute() (proxy.cpp:214)
-==31199==    by 0x404AA0: main (proxy.cpp:104)
-==31199== 
+==8869== 31 bytes in 1 blocks are possibly lost in loss record 2 of 10
+==8869==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==8869==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==8869==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==8869==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==8869==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
+==8869==    by 0x40776D: __static_initialization_and_destruction_0(int, int) (proxy.cpp:31)
+==8869==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
+==8869==    by 0x4240C5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==8869==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==8869== 
+==8869== 33 bytes in 1 blocks are possibly lost in loss record 3 of 10
+==8869==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==8869==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==8869==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==8869==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==8869==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
+==8869==    by 0x407781: __static_initialization_and_destruction_0(int, int) (proxy.cpp:37)
+==8869==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
+==8869==    by 0x4240C5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==8869==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==8869== 
+==8869== 37 bytes in 1 blocks are possibly lost in loss record 4 of 10
+==8869==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==8869==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==8869==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==8869==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==8869==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
+==8869==    by 0x407795: __static_initialization_and_destruction_0(int, int) (proxy.cpp:43)
+==8869==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
+==8869==    by 0x4240C5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==8869==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==8869== 
+==8869== 132 bytes in 1 blocks are possibly lost in loss record 9 of 10
+==8869==    at 0x4A05FDE: malloc (vg_replace_malloc.c:236)
+==8869==    by 0x3A82CBB746: __cxa_allocate_exception (in /usr/lib64/libstdc++.so.6.0.13)
+==8869==    by 0x40959F: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (proxy.cpp:522)
+==8869==    by 0x40675F: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (proxy.cpp:489)
+==8869==    by 0x4055E4: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (proxy.cpp:250)
+==8869==    by 0x4054EC: proxy::RunTests::run_single_test(char const*) (proxy.cpp:238)
+==8869==    by 0x405354: proxy::RunTests::execute_by_mode() (proxy.cpp:223)
+==8869==    by 0x405305: proxy::RunTests::execute() (proxy.cpp:214)
+==8869==    by 0x404AA0: main (proxy.cpp:104)
+==8869== 
 Result: FAILED:
 Timed out (10000ms)
 
