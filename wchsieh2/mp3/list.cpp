@@ -169,7 +169,7 @@ void List<T>::reverseNth( int n )
 	}
 	
 	ListNode * headTemp = head;
-	ListNode * endTemp = head; // for now
+	ListNode * endTemp = head; // temporarily
 	ListNode * temp = NULL;
 	
 	int count = 0;
@@ -178,7 +178,8 @@ void List<T>::reverseNth( int n )
 	else 
 		count = (length/n) + 1;
 	
-	for(int j =0;j < count; j++){ //iterate over the entire list in chunks
+	for(int j =0;j < count; j++) //iterate over the entire list in chunks
+	{ 
 		for (int i = 0; i < n-1; i++) // find the tail of the group
 		{
 			
@@ -419,14 +420,14 @@ typename List<T>::ListNode * List<T>::mergesort(ListNode * start, int chainLengt
     ListNode * right;
     int leftPart, rightPart;
     
-    if (chainLength <= 1)
+    if (chainLength <= 1) 
     	return start;
-    if (chainLength %2 ==0)
+    if (chainLength %2 ==0) //See's if the length is even
     {
     	leftPart = chainLength/2;
     	rightPart = chainLength/2;
     }
-    else
+    else //if it's not, rightPart will have the bigger side
     {
     	leftPart = chainLength/2;
     	rightPart = chainLength/2 + 1;
@@ -436,5 +437,4 @@ typename List<T>::ListNode * List<T>::mergesort(ListNode * start, int chainLengt
     left = mergesort(left, leftPart);
     right = mergesort(right, rightPart);
     return merge(left,right);
-    return NULL; // change me!
 }
