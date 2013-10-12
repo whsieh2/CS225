@@ -14,6 +14,7 @@
 template<class T>
 void Queue<T>::enqueue(T const & newItem)
 {
+	inStack.add(newItem);
     /**
      * @todo Your code here!
      */
@@ -28,10 +29,18 @@ void Queue<T>::enqueue(T const & newItem)
 template<class T>
 T Queue<T>::dequeue()
 {
+	if(outStack.isEmpty())
+	{
+		while(!inStack.isEmpty())
+			outStack.add(inStack.remove());
+	}
+	T returnVal = outStack.peek();
+	outStack.remove();
+	return returnVal;
     /**
      * @todo Your code here! You will need to replace the following line.
      */
-    return T();
+   
 }
 
 /**
@@ -40,7 +49,9 @@ T Queue<T>::dequeue()
  * @see OrderingStructure::add()
  */
 template <class T>
-void Queue<T>::add( const T & theItem ) {
+void Queue<T>::add( const T & theItem )
+{
+	this->enqueue(theItem);
     /**
      * @todo Your code here! Hint: this function should call a Queue
      *  function to add the element to the Queue.
@@ -53,13 +64,14 @@ void Queue<T>::add( const T & theItem ) {
  * @see OrderingStructure::remove()
  */
 template <class T>
-T Queue<T>::remove() {
+T Queue<T>::remove() 
+{
+	return this->dequeue();
     /**
      * @todo Your code here! Hint: this function should call a Queue
      *  function to remove an element from the Queue and return it. You will
      *  need to replace the following line.
      */
-    return T();
 }
 
 /**
@@ -71,10 +83,17 @@ T Queue<T>::remove() {
 template<class T>
 T Queue<T>::peek()
 {
+	if(outStack.isEmpty())
+	{
+		while(!inStack.isEmpty())
+			outStack.add(inStack.remove());
+		
+	}
+	T returnVal = outStack.peek();
+	return returnVal;
     /**
      * @todo Your code here! You will need to replace the following line.
      */
-    return T();
 }
 
 /**
@@ -88,5 +107,5 @@ bool Queue<T>::isEmpty() const
     /**
      * @todo Your code here! You will need to replace the following line.
      */
-    return true;
+   return (inStack.isEmpty() &&outStack.isEmpty());
 }

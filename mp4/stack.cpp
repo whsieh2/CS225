@@ -20,6 +20,7 @@
 template<class T>
 void Stack<T>::push(T const & newItem)
 {
+	myStack.push_front(newItem);
     /**
      * @todo Your code here!
      */
@@ -37,10 +38,13 @@ void Stack<T>::push(T const & newItem)
 template<class T>
 T Stack<T>::pop()
 {
+	T returnVal = myStack.front();
+	myStack.pop_front();
+	
     /**
      * @todo Your code here! You will have to replace the following line.
      */
-    return T();
+    return returnVal;
 }
 
 /**
@@ -49,7 +53,9 @@ T Stack<T>::pop()
  * @see OrderingStructure::add()
  */
 template <class T>
-void Stack<T>::add( const T & theItem ) {
+void Stack<T>::add( const T & theItem ) 
+{
+	this->push(theItem);
     /**
      * @todo Your code here! Hint: this should call another Stack function
      *  to add the element to the Stack.
@@ -68,7 +74,7 @@ T Stack<T>::remove() {
      *  to remove an element from the Stack and return it. You will need to
      *  replace the following line.
      */
-    return T();
+    return this->pop();
 }
 
 /**
@@ -87,7 +93,7 @@ T Stack<T>::peek()
     /**
      * @todo Your code here! You will need to replace the following line.
      */
-    return T();
+    return myStack.front();
 }
 
 /**
@@ -105,5 +111,5 @@ bool Stack<T>::isEmpty() const
     /**
      * @todo Your code here! You will need to replace the following line.
      */
-    return true;
+    return myStack.size()==0;
 }
