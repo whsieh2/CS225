@@ -20,11 +20,21 @@
  *  built. Try searching for "stl stack" to learn how to use it.
  * @hint Think recursively!
  */
+#include <iostream>
+using namespace std;
+ 
 template <typename T>
 T QuackFun::sum(stack<T> & s)
 {
+	if(s.size() == 0)
+		return 0;
+	T temp = s.top();
+	s.pop();
+	int total = temp + sum(s);
+	s.push(temp);
+	return total;
     // Your code here
-    return T(); // stub return value (0 for primitive types). Change this!
+     // stub return value (0 for primitive types). Change this!
                 // Note: T() is the default value for objects, and 0 for
                 // primitive types
 }
@@ -44,6 +54,42 @@ template <typename T>
 void QuackFun::scramble(queue<T> & q)
 {
     stack<T> s;
+    int opcounter = q.size();
+    int blocksize = 1;
+    while (opcounter != 0)
+    {
+    	int min = (opcounter < blocksize)? opcounter : blocksize;
+    	if (blocksize%2 == 0)
+    	{
+    		for (int i=0;i<min;i++)
+    		{
+    			T temp = q.front();
+    			q.pop();
+    			s.push(temp);
+    			
+    		}
+    		for (int i = 0; i<min;i++)
+    		{
+    			T temp = s.top();
+    			s.pop();
+    			q.push(temp);
+    			
+    		}
+    	}
+    	else
+    	{
+    		for (int i = 0 ; i < min; i++)
+    		{
+				T temp = q.front();
+				q.pop();
+				q.push(temp);
+				
+			}
+			
+		}
+		opcounter -= min;
+		blocksize ++;
+    }
     // optional: queue<T> q2;
 
     // Your code here

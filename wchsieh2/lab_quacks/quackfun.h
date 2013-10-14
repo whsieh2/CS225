@@ -3,8 +3,8 @@
  * Contains the QuackFun namespace definition.
  */
 
-#ifndef STACKFUN_H
-#define STACKFUN_H
+#ifndef QUACKFUN_H
+#define QUACKFUN_H
 
 #include <stack>
 #include <queue>
