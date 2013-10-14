@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp4.1 at 2013-10-13 00:48:58
+Testing mp4.1 at 2013-10-13 19:43:42
 
-"It always takes longer than you expect, even when you take into account Hofstadter's Law." ~ Hofstadter's Law
+"Procrastination: working tomorrow for a better today." ~ Anonymous
 
 Setting up test environment...
 Compiling...
