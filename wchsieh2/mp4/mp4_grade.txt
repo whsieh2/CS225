@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp4 at 2013-10-14 02:49:53
+Testing mp4 at 2013-10-15 02:46:54
 
-"Optimism is an occupational hazard of programming; feedback is the treatment." ~ Kent Beck
+"I like it because it feels like I'm drinking something special." ~ Sean Massung
 
 Setting up test environment...
 Compiling...
