@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp4 at 2013-10-15 02:46:54
+Testing mp4 at 2013-10-16 02:47:38
 
-"I like it because it feels like I'm drinking something special." ~ Sean Massung
+"Don't beg. Earn it. Then it will be granted to you." ~ Adroc Thurston
 
 Setting up test environment...
 Compiling...
