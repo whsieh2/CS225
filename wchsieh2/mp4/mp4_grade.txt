@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp4 at 2013-10-16 02:47:38
+Testing mp4 at 2013-10-17 02:58:03
 
-"Don't beg. Earn it. Then it will be granted to you." ~ Adroc Thurston
+"If I had a 3D Reese's chocolate printer I would use that thing all the time always." ~ Chase Geigle
 
 Setting up test environment...
 Compiling...
