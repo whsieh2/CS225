@@ -23,6 +23,7 @@
  */
 class gradientColorPicker : public colorPicker {
 	public:
+	
 		/**
 		 * Constructs a new gradientColorPicker.
 		 *
@@ -67,6 +68,12 @@ class gradientColorPicker : public colorPicker {
 		virtual RGBAPixel operator()( int x, int y );
 
 	private:
+	
+	RGBAPixel fade1;
+	RGBAPixel fade2;
+	int r;
+	int centX;
+	int centY;
 		/** 
 		 * @todo Add any necessary private storage here! You may also add
 		 *	private helper functions as you see fit.

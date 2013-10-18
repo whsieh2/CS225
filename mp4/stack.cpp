@@ -21,6 +21,7 @@ template<class T>
 void Stack<T>::push(T const & newItem)
 {
 	myStack.push_front(newItem);
+	//myStack.resize(myStack.size() + 1);
     /**
      * @todo Your code here!
      */

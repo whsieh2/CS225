@@ -51,7 +51,8 @@ T Queue<T>::dequeue()
 template <class T>
 void Queue<T>::add( const T & theItem )
 {
-	this->enqueue(theItem);
+	
+	enqueue(theItem);
     /**
      * @todo Your code here! Hint: this function should call a Queue
      *  function to add the element to the Queue.
