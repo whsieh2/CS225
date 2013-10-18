@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp4 at 2013-10-17 02:58:03
+Testing mp4 at 2013-10-18 03:18:30
 
-"If I had a 3D Reese's chocolate printer I would use that thing all the time always." ~ Chase Geigle
+"To iterate is human, to recurse divine." ~ L. Peter Deutsch
 
 Setting up test environment...
 Compiling...
@@ -39,9 +39,9 @@ testThroughStackQueue  . . . . . [2 pts] - passed
 testEnqueueConstantTime  . . . . [2 pts] - passed
 testDequeueConstantTime  . . . . [2 pts] - FAILED
 testEnqueuePeekDequeueTime . . . [2 pts] - FAILED
-solid_picker_15  . . . . . . . . [4 pts] - FAILED
-gradient_picker_16 . . . . . . . [4 pts] - FAILED
-gradient_picker_17 . . . . . . . [4 pts] - FAILED
+solid_picker_15  . . . . . . . . [4 pts] - passed
+gradient_picker_16 . . . . . . . [4 pts] - passed
+gradient_picker_17 . . . . . . . [4 pts] - passed
 DFS_solid  . . . . . . . . . . . [4 pts] - FAILED
 BFS_solid  . . . . . . . . . . . [4 pts] - FAILED
 DFS_grid . . . . . . . . . . . . [4 pts] - FAILED
@@ -64,5 +64,5 @@ BFS_29 . . . . . . . . . . . . . [2 pts] - FAILED
 
 Total score...
 ================================================================
-TOTAL SCORE: 36
+TOTAL SCORE: 48
 
