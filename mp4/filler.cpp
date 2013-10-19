@@ -10,78 +10,62 @@
 
 animation filler::dfs::fillSolid( PNG & img, int x, int y, 
         RGBAPixel fillColor, int tolerance, int frameFreq ) {
-    /**
-     * @todo Your code here! You should replace the following line with a
-     *  correct call to fill with the correct colorPicker parameter.
-     */
-    return animation();
+
+     solidColorPicker solid(fillColor);
+    return filler::fill<Stack>(img, x, y, solid, tolerance, frameFreq);
 }
 
 animation filler::dfs::fillGrid( PNG & img, int x, int y, 
         RGBAPixel gridColor, int gridSpacing, int tolerance, int frameFreq ) {
-    /**
-     * @todo Your code here! You should replace the following line with a
-     *  correct call to fill with the correct colorPicker parameter.
-     */
-    return animation();
+
+    gridColorPicker fillColor(gridColor, gridSpacing);
+     
+    return filler::fill<Stack>(img, x, y, fillColor, tolerance, frameFreq); 
 }
 
 animation filler::dfs::fillGradient( PNG & img, int x, int y, 
         RGBAPixel fadeColor1, RGBAPixel fadeColor2, int radius, 
         int tolerance, int frameFreq ) {
-    /**
-     * @todo Your code here! You should replace the following line with a
-     *  correct call to fill with the correct colorPicker parameter.
-     */
-    return animation();
+ 	
+ 	gradientColorPicker fillColor( fadeColor1, fadeColor2, radius, x, y);
+    return filler::fill<Stack>(img, x, y, fillColor, tolerance, frameFreq); 
 }
 
 animation filler::dfs::fill( PNG & img, int x, int y, 
         colorPicker & fillColor, int tolerance, int frameFreq ) {
-    /**
-     * @todo Your code here! You should replace the following line with a
-     *  correct call to filler::fill with the correct template parameter
-     *  indicating the ordering structure to be used in the fill.
-     */
-    return animation();
+        
+ 	animation anime = filler::fill<Stack>(img, x, y, fillColor, tolerance, frameFreq);
+    return anime;
 }
 
 animation filler::bfs::fillSolid( PNG & img, int x, int y, 
         RGBAPixel fillColor, int tolerance, int frameFreq ) {
-    /**
-     * @todo Your code here! You should replace the following line with a
-     *  correct call to fill with the correct colorPicker parameter.
-     */
-    return animation();
+    
+    
+    solidColorPicker solid(fillColor);
+    return filler::fill<Queue>(img, x, y, solid, tolerance, frameFreq); 
 }
 
 animation filler::bfs::fillGrid( PNG & img, int x, int y, 
         RGBAPixel gridColor, int gridSpacing, int tolerance, int frameFreq ) {
-    /**
-     * @todo Your code here! You should replace the following line with a
-     *  correct call to fill with the correct colorPicker parameter.
-     */
-    return animation();
+   
+   gridColorPicker fillColor(gridColor, gridSpacing);
+   return filler::fill<Queue>(img, x, y, fillColor, tolerance, frameFreq); 
 }
 
 animation filler::bfs::fillGradient( PNG & img, int x, int y, 
         RGBAPixel fadeColor1, RGBAPixel fadeColor2, int radius, 
         int tolerance, int frameFreq ) {
-    /**
-     * @todo Your code here! You should replace the following line with a
-     *  correct call to fill with the correct colorPicker parameter.
-     */
-    return animation();
+
+	gradientColorPicker fillColor (fadeColor1, fadeColor2, radius, x, y);
+    return filler::fill<Queue>(img, x, y, fillColor, tolerance, frameFreq); ;
 }
 
 animation filler::bfs::fill( PNG & img, int x, int y, 
         colorPicker & fillColor, int tolerance, int frameFreq ) {
-    /**
-     * @todo Your code here! You should replace the following line with a
-     *  correct call to filler::fill with the correct template parameter
-     *  indicating the ordering structure to be used in the fill.
-     */
-    return animation();
+  
+  	animation anime = filler::fill<Queue>(img, x, y, fillColor, tolerance, frameFreq);
+    return anime;
 }
 
 template <template <class T> class OrderingStructure>
@@ -141,5 +125,103 @@ animation filler::fill( PNG & img, int x, int y,
      *        have been checked. So if frameFreq is set to 1, a pixel should
      *        be filled every frame.
      */
-    return animation();
+    OrderingStructure<RGBAPixel> pixels;
+    OrderingStructure<int> xcoords;
+    OrderingStructure<int> ycoords;
+    int processed[img.width()][img.height()];
+    for (int i = 0; i < img.width(); i++) 
+    {
+        for (int j = 0; j <img.height(); j++)
+        {
+            processed[i][j] = false;
+        }
+    }
+    animation myAnim;
+    int frameCount = 0;
+
+    RGBAPixel origPixel = *(img(x,y));
+    int origRed = origPixel.red;
+    int origGreen = origPixel.green;
+    int origBlue = origPixel.blue;
+    
+
+
+    //add first point
+    pixels.add(*img(x,y));
+    xcoords.add(x);
+    ycoords.add(y);
+
+    while (!pixels.isEmpty())
+    {
+        //remove one point in the structure
+        RGBAPixel currPixel = pixels.remove();
+
+        int currRed = currPixel.red;
+        int currGreen = currPixel.green;
+        int currBlue = currPixel.blue;
+        int currX = xcoords.remove();
+        int currY = ycoords.remove();
+
+   
+
+        //compute min
+        int min = pow(origRed-currRed,2)+pow(origGreen-currGreen,2)+pow(origBlue-currBlue,2);
+
+        //compute if min is within tolerance
+        bool inTolDis = min <= tolerance;
+
+        //process a currPixel if it's not processed yet and it's within tolerance 
+        if (inTolDis && !processed[currX][currY])
+        {
+            //mark it processed
+            processed[currX][currY] = true;
+            frameCount++;
+
+            //change color
+            *(img(currX,currY)) = fillColor(currX,currY); 
+
+       
+            //add neighbors to structure
+            if (currX+1 <img.width())
+            {
+            //RIGHT
+            pixels.add(*(img(currX+1,currY)));
+            xcoords.add(currX+1);
+            ycoords.add(currY);
+            }
+            
+            if (currY+1 <img.height())
+            {
+            //DOWN
+            pixels.add(*(img(currX,currY+1)));
+            xcoords.add(currX);
+            ycoords.add(currY+1);
+            }
+
+            if (currX-1>= 0)
+            {
+            //LEFT
+            pixels.add(*(img(currX-1,currY)));
+            xcoords.add(currX-1);
+            ycoords.add(currY);
+            }
+
+            if (currY-1>= 0)
+            {
+            //DOWN
+            pixels.add(*(img(currX,currY-1)));
+            xcoords.add(currX);
+            ycoords.add(currY-1);
+            }
+            
+
+            //add frame to animation if frame count is divisible by framefreq
+            if (frameCount % frameFreq == 0)
+            {
+                //add the current image to the animation
+                myAnim.addFrame(img);
+            }
+       } 
+    }
+    return myAnim;
 }
