@@ -156,6 +156,21 @@ class BinaryTree
          */
         void printLeftToRight(const Node* subRoot) const;
         
+        // private helper function for the public mirror function
+        void mirror(Node * subRoot);
+        // private helper function for the public isOrdered function
+        bool isOrdered(const Node *subRoot) const;
+        //private helper function to find the left most item
+        T leftMost(const Node * subRoot) const;
+        //private helper function to find the right most item
+        T rightMost(const Node * subRoot) const;
+        
+        //private helper function to print path
+        void printPathsHelper(const Node * subRoot, int path[], int size) const;
+        
+        //private helper function to sum dist
+        int sumDistHelper(const Node * subroot, int count) const;
+        
         /**
          * Private helper function for the public insert function.
          * @param node The current node in the recursion

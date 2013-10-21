@@ -75,7 +75,19 @@ void BinaryTree<T>::printLeftToRight(const Node * subRoot) const
 template <typename T>
 void BinaryTree<T>::mirror()
 {
-	// your code here
+	mirror(root);
+}
+template <typename T>
+void BinaryTree<T>::mirror( Node *subRoot)
+{
+    if (subRoot == NULL)
+        return;
+    Node *temp = subRoot->left;
+    subRoot->left = subRoot->right;
+    subRoot->right = temp;
+
+    mirror(subRoot->left);
+    mirror(subRoot->right);
 }
 
 /**
@@ -87,7 +99,39 @@ template <typename T>
 bool BinaryTree<T>::isOrdered() const
 {
     // your code here
-	return false;
+	return isOrdered(root);
+}
+template <typename T>
+bool BinaryTree<T>::isOrdered(const Node* subRoot) const
+{
+    bool lefOrdered = false, rigOrdered = false;
+    int rigMost = 0, lefMost = 0;
+    if (subRoot == NULL)
+        return true;
+    if (subRoot->left != NULL)
+    {
+        lefOrdered = isOrdered(subRoot->left);
+        rigMost = rightMost(subRoot->left);
+    }
+    else
+    {
+        lefOrdered = true;
+        rigMost = subRoot->elem;
+    }
+
+    if (subRoot->right != NULL)
+    {
+        rigOrdered = isOrdered(subRoot->right);
+        lefMost = leftMost(subRoot->right);
+    }
+    else
+    {   
+        rigOrdered = true;
+        lefMost = subRoot->elem;
+    }
+    if (lefOrdered && rigOrdered && (lefMost>=subRoot->elem) && (rigMost<=subRoot->elem))
+        return true;
+    return false;
 }
 
 /**
@@ -96,12 +140,57 @@ bool BinaryTree<T>::isOrdered() const
  *  leaf node. Paths ending in a left node should be printed before paths ending in a node
  *  further to the right.
  */
+
+template <typename T>
+T BinaryTree<T>::leftMost(const Node* subRoot) const
+{
+    if (subRoot->left == NULL)
+        return subRoot->elem;
+    return leftMost(subRoot->left);
+}
+
+/**
+ * return the right-most node on the tree
+ */
+template <typename T>
+T BinaryTree<T>::rightMost(const Node* subRoot) const
+{
+    if (subRoot->right == NULL)
+        return subRoot->elem;
+    return rightMost(subRoot->right);
+
+}
 template <typename T>
 void BinaryTree<T>::printPaths() const
 {
-    // your code here
+    int path[1000];
+    printPathsHelper(root, path, 0);
 }
 
+template <typename T>
+void BinaryTree<T>::printPathsHelper(const Node* subRoot, int path[], int size) const
+{
+    if (subRoot == NULL)
+        return;
+
+    path[size] = subRoot->elem;
+    size++;
+
+    if (subRoot->left ==NULL && subRoot->right == NULL)
+    {
+        cout<<"Path:";
+        for(int i = 0; i < size; i++)
+        {
+            cout<<" "<<path[i];
+        }
+        cout<<endl;
+    }
+    else
+    {
+        printPathsHelper(subRoot->left,path,size);
+        printPathsHelper(subRoot->right,path,size);
+    }
+}
 /**
  * Each node in a tree has a distance from the root node - the depth of that node,
  *  or the number of edges along the path from that node to the root. This function returns
@@ -112,6 +201,16 @@ void BinaryTree<T>::printPaths() const
 template <typename T>
 int BinaryTree<T>::sumDistances() const
 {
-    // your code here
-    return -1;
+    int count = 0;
+    return sumDistHelper(root,count);
 }
+
+template <typename T>
+int BinaryTree<T>::sumDistHelper(const Node* subRoot, int count) const
+{
+    if (subRoot == NULL)
+        return 0;
+    int retVal = sumDistHelper(subRoot->left, ++count) + sumDistHelper(subRoot->right, count)+count;
+    return retVal-1;
+}
+
