@@ -1,0 +1,22 @@
+Monad Autograder
+Testing lab_trees at 2013-10-21 01:03:44
+
+"You think the sky is like a big big plate." ~ Prof. Jiawei Han
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+test_isOrdered  . [25 pts] - passed
+test_mirror . . . [25 pts] - passed
+test_printPaths . [25 pts] - passed
+test_sumDistances [25 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+
