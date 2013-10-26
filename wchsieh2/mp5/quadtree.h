@@ -16,8 +16,17 @@
 class Quadtree
 {
 	public:
-	
-	
+		//Big Three
+		Quadtree();
+		Quadtree(const PNG & source, int resolution);
+		Quadtree(Quadtree const & other);
+		~Quadtree();
+		
+		//Member Functions
+		Quadtree const & operator= (Quadtree const &other);
+		void buildTree (PNG const &source, int resolution);
+		RGBAPixel getPixel (int x, int y) const;
+		PNG decompress () const;
 	
 	private:
 
@@ -33,9 +42,43 @@ class Quadtree
 		QuadtreeNode* seChild;  // pointer to southeast child
 
 		RGBAPixel element;  // the pixel stored as this node's "data"
+		
+		int x;
+		int y;
+		int res;
+		
+		QuadtreeNode(int xcoord, int ycoord, int resolution)
+		{
+			x = xcoord;
+			y = ycoord;
+			res = resolution;
+			nwChild = neChild = swChild = seChild = NULL;
+		}
+		QuadtreeNode(int xcoord, int ycoord, int resolution, PNG & source)
+		{
+			x = xcoord;
+			y = ycoord;
+			res = resolution;
+			nwChild = neChild = swChild = seChild = NULL;
+			element = *(source(x,y));
+		}
+		QuadtreeNode(QuadtreeNode const * other)
+		{
+			x = other -> x;
+			y = other -> y;
+			res = other -> res;
+			nwChild = neChild = swChild = seChild = NULL;
+			element = other-> element;
+		}
+		
 	};
+	void clear(QuadtreeNode * & subRoot);
+	QuadtreeNode* copy(QuadtreeNode *otherRoot);
+	void treeHelper (PNG const & source, int resolution, QuadtreeNode *subRoot);
+	RGBAPixel pixelHelper(int x, int y, QuadtreeNode *subRoot) const;
+	bool inRange(int x, int y, QuadtreeNode *subroot) const;
 	
-	QuadtreeNode* root;    // pointer to root of quadtree
+	QuadtreeNode * root;    // pointer to root of quadtree
 	
 	
 	
