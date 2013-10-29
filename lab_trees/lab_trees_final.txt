@@ -1,7 +1,7 @@
 Monad Autograder
-Testing lab_trees at 2013-10-21 01:03:44
+Testing lab_trees at 2013-10-28 22:20:34
 
-"You think the sky is like a big big plate." ~ Prof. Jiawei Han
+"There are two ways of constructing a software design. One way is to make it so simple that there are obviously no deficiencies. And the other way is to make it so complicated that there are no obvious deficiencies." ~ C.A.R. Hoare
 
 Setting up test environment...
 Compiling...
@@ -10,13 +10,13 @@ Compiling...
 
 Running tests...
 ================================================================
-test_isOrdered  . [25 pts] - passed
-test_mirror . . . [25 pts] - passed
-test_printPaths . [25 pts] - passed
+test_isOrdered  . [33 pts] - passed
+test_mirror . . . [33 pts] - passed
+test_printPaths . [34 pts] - passed
 test_sumDistances [25 pts] - passed
 
 
 Total score...
 ================================================================
-TOTAL SCORE: 100
+TOTAL SCORE: 125
 
