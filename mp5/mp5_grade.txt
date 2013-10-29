@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp5 at 2013-10-28 02:53:01
+Testing mp5 at 2013-10-29 02:56:39
 
-"I did respond to your email, but I might have forgotten to hit send." ~ Cinda Heeren
+"I hear and I forget; I see and I remember; I do and I understand." ~ Confucius
 
 Setting up test environment...
 Compiling...
