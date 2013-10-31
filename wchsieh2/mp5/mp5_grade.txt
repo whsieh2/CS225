@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp5 at 2013-10-30 03:05:58
+Testing mp5 at 2013-10-31 03:03:41
 
-"I didn't say I wanted to die in a blender! I said I wanted to be in a blender!" ~ Kyle Johnson
+"The cheating sheet is key to success in CS 412 course." ~ CS 412 TA
 
 Setting up test environment...
 Compiling...
