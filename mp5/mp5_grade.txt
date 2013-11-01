@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp5 at 2013-10-31 03:03:41
+Testing mp5 at 2013-11-01 03:31:31
 
-"The cheating sheet is key to success in CS 412 course." ~ CS 412 TA
+"Measuring programming progress by lines of code is like measuring aircraft building progress by weight." ~ Bill Gates
 
 Setting up test environment...
 Compiling...
