@@ -24,34 +24,34 @@ Quadtree::Quadtree()
 
 Quadtree::Quadtree(const PNG & source, int resolution)
 {
-   // cout<<"[In constructor]..."<<endl;
+  
     buildTree(source, resolution);
-    //cout<<"[Done building a tree!]"<<endl;
 }
 
 Quadtree::Quadtree(Quadtree const & other)
 {
-    //cout<<"[In copy constructor]..."<<endl;
     if (other.root == NULL)
     {
         root = NULL;
         return;
     }
     root = copy(other.root);
-    //cout<<"[Done copying a tree!]"<<endl;
+    
 }
 
 Quadtree::QuadtreeNode * Quadtree::copy( QuadtreeNode *otherRoot)
 {
+	QuadtreeNode *retVal = new QuadtreeNode::QuadtreeNode(otherRoot);
     if (otherRoot == NULL)
     {
         return NULL;
     }
-    QuadtreeNode *retVal = new QuadtreeNode::QuadtreeNode(otherRoot);
-    retVal->nwChild = copy(otherRoot->nwChild);
-    retVal->neChild = copy(otherRoot->neChild);
+  
     retVal->swChild = copy(otherRoot->swChild);
     retVal->seChild = copy(otherRoot->seChild);
+    retVal->nwChild = copy(otherRoot->nwChild);
+    retVal->neChild = copy(otherRoot->neChild);
+    
     return retVal;
 }
 
@@ -62,16 +62,15 @@ Quadtree::~Quadtree()
 
 void Quadtree::clearTree( QuadtreeNode * & subRoot)
 {
-    // base case
     if ( subRoot == NULL )
         return;
     
-    // recursively clear all other nodes
-    clearTree(subRoot->nwChild);
-    clearTree(subRoot->neChild);
     clearTree(subRoot->swChild);
     clearTree(subRoot->seChild);
-    // delete the root and set it to NULL
+    clearTree(subRoot->nwChild);
+    clearTree(subRoot->neChild);
+    
+    
     delete subRoot;
     subRoot = NULL;
 }
@@ -96,17 +95,11 @@ Quadtree const & Quadtree::operator= (Quadtree const &other)
 
 void Quadtree::buildTree (PNG const & source, int resolution)
 {
-    //first construct a tree that has enough leaves
-    //  with: x, y, res
-
-    //Then load the leaves with the correct pixels
-    
-    //compute and store the average color of the children of non-leave nodes on the way back up
-    //cout<<"[In buildTree]..."<<endl;
+   
     root = new QuadtreeNode(0,0,resolution);
 
     buildTreeHelper (source, resolution, root);
-    //cout<<"[Tree built!]"<<endl;
+  
 }
 
 void Quadtree::buildTreeHelper (PNG const & source, int resolution, QuadtreeNode *subRoot)
@@ -119,16 +112,18 @@ void Quadtree::buildTreeHelper (PNG const & source, int resolution, QuadtreeNode
         return;
     }
     //initialize new nodes
+ 	subRoot->swChild = new QuadtreeNode(subRoot->x, subRoot->y + resolution/2, resolution/2);
+    subRoot->seChild = new QuadtreeNode(subRoot->x + resolution/2, subRoot->y + resolution/2, resolution/2);
     subRoot->nwChild = new QuadtreeNode(subRoot->x, subRoot->y, resolution/2);
     subRoot->neChild = new QuadtreeNode(subRoot->x + resolution/2, subRoot->y, resolution/2);
-    subRoot->swChild = new QuadtreeNode(subRoot->x, subRoot->y + resolution/2, resolution/2);
-    subRoot->seChild = new QuadtreeNode(subRoot->x + resolution/2, subRoot->y + resolution/2, resolution/2);
+
 
     //recursively build tree on children
-    buildTreeHelper(source, resolution/2, subRoot->nwChild);
-    buildTreeHelper(source, resolution/2, subRoot->neChild);
     buildTreeHelper(source, resolution/2, subRoot->swChild);
     buildTreeHelper(source, resolution/2, subRoot->seChild);
+    buildTreeHelper(source, resolution/2, subRoot->nwChild);
+    buildTreeHelper(source, resolution/2, subRoot->neChild);
+   
 
     //store average color
     subRoot->element.red = (subRoot->nwChild->element.red + subRoot->neChild->element.red + subRoot->swChild->element.red + subRoot->seChild->element.red)/4; 
@@ -150,17 +145,20 @@ RGBAPixel Quadtree::getPixelHelper(int x, int y, QuadtreeNode *subRoot) const
         //in nw
         return getPixelHelper(x,y,subRoot->nwChild);
 
-    } else if (isInRange(x,y,subRoot->neChild))
-    {
-        //in ne
-        return getPixelHelper(x,y,subRoot->neChild);
-
-    } else if (isInRange(x,y,subRoot->swChild))
+    }
+    else if (isInRange(x,y,subRoot->swChild))
     {
         //in sw
         return getPixelHelper(x,y,subRoot->swChild);
 
-    } else
+    }
+    else if (isInRange(x,y,subRoot->neChild))
+    {
+        //in ne
+        return getPixelHelper(x,y,subRoot->neChild);
+
+    }  
+    else
     {
         //in se
         return getPixelHelper(x,y,subRoot->seChild);
@@ -195,6 +193,7 @@ PNG Quadtree::decompress() const
 
 }
 
+
 void Quadtree::clockwiseRotate()
 {
    clockwiseRotate(root); 
@@ -215,23 +214,27 @@ void Quadtree::clockwiseRotate(QuadtreeNode * subRoot)
     subRoot->neChild = temp;
     
     //start assigning new x,y coordinates after the rotation
-    subRoot->nwChild->x = subRoot->x;
-    subRoot->nwChild->y = subRoot->y;
-
-    subRoot->neChild->x = subRoot->x + subRoot->res/2;
-    subRoot->neChild->y = subRoot->y;
     
     subRoot->swChild->x = subRoot->x;
     subRoot->swChild->y = subRoot->y + subRoot->res/2;
     
     subRoot->seChild->x = subRoot->x + subRoot->res/2;
     subRoot->seChild->y = subRoot->y + subRoot->res/2;
+    
+    subRoot->nwChild->x = subRoot->x;
+    subRoot->nwChild->y = subRoot->y;
+
+    subRoot->neChild->x = subRoot->x + subRoot->res/2;
+    subRoot->neChild->y = subRoot->y;
+    
+
 
     //recursively call rotate on children
-    clockwiseRotate(subRoot->nwChild);
-    clockwiseRotate(subRoot->neChild);
     clockwiseRotate(subRoot->swChild);
     clockwiseRotate(subRoot->seChild);
+    clockwiseRotate(subRoot->nwChild);
+    clockwiseRotate(subRoot->neChild);
+  
     
 }
 
@@ -242,23 +245,26 @@ void Quadtree::prune(int tolerance)
 
 void Quadtree::prune(int tolerance, QuadtreeNode * subRoot)
 {
+	if (checkTol(subRoot, subRoot, tolerance))
+    {
+        //prune
+         clearTree(subRoot->swChild);
+        clearTree(subRoot->seChild);
+        clearTree(subRoot->nwChild);
+        clearTree(subRoot->neChild);
+       
+        return;
+    }
     if (subRoot->nwChild == NULL)
         return;
     
-    if (checkTol(subRoot, subRoot, tolerance))
-    {
-        //prune
-        clearTree(subRoot->nwChild);
-        clearTree(subRoot->neChild);
-        clearTree(subRoot->swChild);
-        clearTree(subRoot->seChild);
-        return;
-    }
+
     //recursively call prune on children
-    prune(tolerance,subRoot->nwChild);
-    prune(tolerance,subRoot->neChild);
     prune(tolerance,subRoot->swChild);
     prune(tolerance,subRoot->seChild);
+    prune(tolerance,subRoot->nwChild);
+    prune(tolerance,subRoot->neChild);
+   
 }
 
 bool Quadtree::checkTol(QuadtreeNode * subRoot, QuadtreeNode * avgRoot, int tol) const
@@ -287,43 +293,39 @@ int Quadtree::pruneSize(int tolerance) const
 
 int Quadtree::pruneSize(int tolerance, QuadtreeNode * subRoot) const
 {
-    if (subRoot->nwChild == NULL)
-        return 1;
-    if (checkTol(subRoot, subRoot, tolerance))
+	if (checkTol(subRoot, subRoot, tolerance))
     {
         return 1;
     }
+    if (subRoot->nwChild == NULL)
+        return 1;
+   
     return pruneSize(tolerance, subRoot->nwChild) + pruneSize(tolerance, subRoot->neChild) + pruneSize(tolerance, subRoot->swChild) + pruneSize(tolerance, subRoot->seChild);
 }
 
 int Quadtree::idealPrune(int numLeaves)const
-{
-    //max difference is 195075
-    
+{ 
     return idealPrune(numLeaves, 255*255*3, 255*255*3);
-    /*
-    for (int i = 0; i < 255*255*3; i++)
-        cout<<pruneSize(i)<<" "<<i<<endl;
-    return 0;
-    */
+  
 }
 
 
 int Quadtree::idealPrune(int numLeaves, int n, int interval) const
 {
+	
     if (pruneSize(n) == numLeaves)
     {
         while (pruneSize(n) == numLeaves)
             n--;
         return n+1;
     }
-    if (pruneSize(n) < numLeaves)
+   	if (pruneSize(n) > numLeaves)
     {
-        return idealPrune(numLeaves, n-interval/2, interval/2);
+        return idealPrune(numLeaves, n+interval/2, interval/2);
     }
     else
     {
-        return idealPrune(numLeaves, n+interval/2, interval/2);
+        return idealPrune(numLeaves, n-interval/2, interval/2);
     }
 }
 
