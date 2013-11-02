@@ -61,41 +61,43 @@ class Quadtree
                 QuadtreeNode* swChild;  // pointer to southwest child
                 QuadtreeNode* seChild;  // pointer to southeast child
                 RGBAPixel element;  // the pixel stored as this node's "data"
-        int x;
-        int y;
-        int res;
+		    int x;
+		    int y;
+		    int res;
 
-        /**
-         * Constructor to be called for new non-leaf QuadtreeNodes.
-         */
-        QuadtreeNode(int xcoord, int ycoord, int resolution)
-        {
-            x = xcoord;
-            y = ycoord;
-            res = resolution;
-            nwChild = neChild = swChild = seChild = NULL;
-        }
+		    /**
+		     * Constructor to be called for new non-leaf QuadtreeNodes.
+		     */
+		        QuadtreeNode(QuadtreeNode const * other)
+		    {
+		        x = other->x;
+		        y = other->y;
+		        res = other->res;
+		        nwChild = neChild = swChild = seChild = NULL;
+		        element = other->element;
+		    }
+		    QuadtreeNode(int xcoord, int ycoord, int resolution, PNG & source)
+		    {
+		        x = xcoord;
+		        y = ycoord;
+		        res = resolution;
+		        nwChild = neChild = swChild = seChild = NULL;
+		        element = *(source(x,y));
+		    }
+		    QuadtreeNode(int xcoord, int ycoord, int resolution)
+		    {
+		        x = xcoord;
+		        y = ycoord;
+		        res = resolution;
+		        nwChild = neChild = swChild = seChild = NULL;
+		    }
 
-        /**
-         * Constructor to be called for leaf QuadtreeNodes
-         */
-        QuadtreeNode(int xcoord, int ycoord, int resolution, PNG & source)
-        {
-            x = xcoord;
-            y = ycoord;
-            res = resolution;
-            nwChild = neChild = swChild = seChild = NULL;
-            element = *(source(x,y));
-        }
+		    /**
+		     * Constructor to be called for leaf QuadtreeNodes
+		     */
+		  
 
-        QuadtreeNode(QuadtreeNode const * other)
-        {
-            x = other->x;
-            y = other->y;
-            res = other->res;
-            nwChild = neChild = swChild = seChild = NULL;
-            element = other->element;
-        }
+		
 
         };
 
@@ -107,7 +109,7 @@ class Quadtree
 
     RGBAPixel getPixelHelper(int x, int y, QuadtreeNode *subRoot) const;
 
-    bool isInRange(int x, int y, QuadtreeNode *subRoot) const;
+ 	bool isInRange(int x, int y, QuadtreeNode *subRoot) const;
 
     void clockwiseRotate(QuadtreeNode *subRoot);
 
@@ -116,12 +118,14 @@ class Quadtree
     int difference(QuadtreeNode * a, QuadtreeNode * b) const;
     
     int pruneSize(int tolerance, QuadtreeNode * subRoot) const;
-        
-        QuadtreeNode* root;    // pointer to root of quadtree
 
     int idealPrune(int numLeaves, int n, int interval) const;
 
     bool checkTol(QuadtreeNode * subRoot, QuadtreeNode * avgRoot, int avg)const;
+        
+        QuadtreeNode* root;    // pointer to root of quadtree
+
+
         
         
         
