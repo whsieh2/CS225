@@ -146,6 +146,8 @@ class AVLTree
          * @param node The node to rotate
 		 */
 		void rotateLeftRight(Node* & node);
+		int balancing(Node *t);
+		int getHeight(Node *t);
 
         /**
          * @param node The node's height to check
