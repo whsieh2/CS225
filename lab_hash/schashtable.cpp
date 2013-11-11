@@ -62,6 +62,16 @@ void SCHashTable<K,V>::insert( K const & key, V const & value ) {
 template <class K, class V>
 void SCHashTable<K,V>::remove( K const & key ) {
     typename list< pair<K,V> >::iterator it;
+    
+    int index = hash(key, size);
+    for (it = table[index].begin(); it != table[index].end(); it++)
+    {
+    	if (it->first == key)
+		{
+    		table[index].erase(it);
+    		break;
+    	}	
+    }
     /**
      * @todo Implement this function.
      *
@@ -122,6 +132,24 @@ void SCHashTable<K,V>::clear() {
 template <class K, class V>
 void SCHashTable<K,V>::resizeTable() {
     typename list< pair<K,V> >::iterator it;
+    
+    size_t biggerSize = findPrime(size*2);
+    std::list< std::pair<K, V> > * temp = new list< pair<K,V> >[biggerSize];
+    int index =0;
+    for (int i=0; i< size; i++)
+    {
+    	for (it = table[i].begin(); it != table[i].end();it++)
+    	{
+    		index = hash(it->first, biggerSize);
+    		pair<K,V> p(it-> first, it->second);
+    		temp[index].push_back(p);
+    	}
+    }
+    size = biggerSize;
+    delete [] table;
+    table = temp;
+    
+    
     /**
      * @todo Implement this function.
      *

@@ -67,6 +67,25 @@ LogfileParser::LogfileParser( const string & fname ) : whenVisitedTable( 256 ) {
          * this problem. This should also build the uniqueURLs member
          * vector as well.
          */
+         string key =  11.customer;
+         key += " ";
+         key += 11.url;
+         time_t date = 11.date;
+         
+         if( whenVistedTable.keyExists(key))
+         {
+         	if (whenVisitedTable[key] > date)
+         		whenVisitedTable[key] = date;	    
+         }
+         else 
+         	whenVisitedTable[key] = date;
+         
+         if(!pageVisitedTable.keyExists(11.url))
+         {
+         	pageVistedTable[11.url] = true;
+         	uniqueURLS.push_back(11.url);
+         
+         }
     }
     infile.close();
 }
@@ -82,7 +101,10 @@ bool LogfileParser::hasVisited( const string & customer, const string & url ) co
     /**
      * @todo Implement this function.
      */
-    return true; // replaceme
+     string key = customer;
+     key += " ";
+     key += url;
+    return true;whenVisitedtable.keyExists(key); // replaceme
 }
 
 /**
@@ -99,7 +121,12 @@ time_t LogfileParser::dateVisited( const string & customer, const string & url )
     /**
      * @todo Implement this function.
      */
-    return time_t(); // replaceme
+    if (!hasVisted(customer, url))
+        return time_t();
+    string key = customer;
+    key += " ";
+    key += url;
+    return whenVisitedTable.find(key);
 }
 
 /**

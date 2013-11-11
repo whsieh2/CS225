@@ -21,7 +21,23 @@ WordFreq<HT>::WordFreq( const string & infile ) : filename( infile ) { /* nothin
 template <template <class K, class V> class HT>
 vector< pair<string, int> > WordFreq<HT>::getWords( int threshold ) const {
     TextFile infile( filename );
+    HT<string,int> hashtable(1024);
+    while (infile.good())
+    {
+    	string word =  infile.getNextWord();
+    	hashtable[word]++;
+    }
+    
+    typename HT<string, int>::iterator it;
     vector< pair<string, int> > ret;
+   
+    for (it = hashtable.begin(); it != hashtable.end(); it++)
+    {
+    	if (it-> second >= threshold)
+    		ret.push_back(*it);
+    		
+    }
+    
     /**
      * @todo Implement this function.
      * @see char_counter.cpp if you're having trouble.

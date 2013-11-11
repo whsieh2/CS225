@@ -73,6 +73,19 @@ LPHashTable<K,V>::LPHashTable( LPHashTable<K,V> const & other ) {
 
 template <class K, class V>
 void LPHashTable<K,V>::insert( K const & key, V const & value ) {
+
+	if(shouldResize())
+		resizeTable();
+	int index = hash(key,size);
+	pair<K,V> *temp = new pair<K,V>(key,value);
+	
+	while( table[index]!=NULL)
+		index = (index + 1)% size;
+	table[index] = temp;
+	should_probe[index]= true;
+	
+	elems++;
+	
     /**
      * @todo Implement this function.
      *
