@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp6 at 2013-11-14 01:42:45
+Testing mp6 at 2013-11-15 01:40:07
 
-"Even if by chance this world should end tomorrow, if it's together with you, would 'I'm okay with that too' be the cool attitude you'd take?" ~ Makino Yui
+"Find your points of interest, compute HOG features, bung them into a classifier, and see what you get." ~ D.A. Forsyth
 
 Setting up test environment...
 Compiling...
