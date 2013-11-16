@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp6 at 2013-11-15 01:40:07
+Testing mp6 at 2013-11-16 01:38:10
 
-"Find your points of interest, compute HOG features, bung them into a classifier, and see what you get." ~ D.A. Forsyth
+"There's an old story about the person who wished his computer were as easy to use as his telephone. That wish has come true, since I no longer know how to use my telephone." ~ Bjarne Stroustrup
 
 Setting up test environment...
 Compiling...
