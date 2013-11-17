@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp6 at 2013-11-16 01:38:10
+Testing mp6 at 2013-11-17 01:37:15
 
-"There's an old story about the person who wished his computer were as easy to use as his telephone. That wish has come true, since I no longer know how to use my telephone." ~ Bjarne Stroustrup
+"I think Microsoft named .NET so it wouldn't show up in a Unix directory listing." ~ Oktal
 
 Setting up test environment...
 Compiling...
