@@ -1,0 +1,68 @@
+Monad Autograder
+Testing lab_hash at 2013-11-18 14:38:59
+
+"I didn't say I wanted to die in a blender! I said I wanted to be in a blender!" ~ Kyle Johnson
+
+Setting up test environment...
+Compiling...
+================================================================
+In file included from unit_tests.cpp:232:
+logfile_parser.cpp:70:24: error: invalid suffix "customer" on floating constant
+In file included from unit_tests.cpp:232:
+logfile_parser.cpp:72: warning: large fixed-point constant implicitly truncated to fixed-point type
+logfile_parser.cpp:73:24: error: invalid suffix "date" on floating constant
+logfile_parser.cpp:83: warning: large fixed-point constant implicitly truncated to fixed-point type
+logfile_parser.cpp:85: warning: large fixed-point constant implicitly truncated to fixed-point type
+logfile_parser.cpp:86: warning: large fixed-point constant implicitly truncated to fixed-point type
+logfile_parser.cpp: In constructor 'LogfileParser::LogfileParser(const std::string&)':
+logfile_parser.cpp:72: error: fixed-point types not supported in C++
+logfile_parser.cpp:75: error: 'whenVistedTable' was not declared in this scope
+logfile_parser.cpp:83: error: fixed-point types not supported in C++
+logfile_parser.cpp:85: error: 'pageVistedTable' was not declared in this scope
+logfile_parser.cpp:85: error: fixed-point types not supported in C++
+logfile_parser.cpp:86: error: 'uniqueURLS' was not declared in this scope
+logfile_parser.cpp:86: error: fixed-point types not supported in C++
+logfile_parser.cpp: In member function 'bool LogfileParser::hasVisited(const std::string&, const std::string&) const':
+logfile_parser.cpp:107: error: 'whenVisitedtable' was not declared in this scope
+logfile_parser.cpp: In member function 'time_t LogfileParser::dateVisited(const std::string&, const std::string&) const':
+logfile_parser.cpp:124: error: 'hasVisted' was not declared in this scope
+In file included from unit_tests.cpp:232:
+logfile_parser.cpp:70:24: error: invalid suffix "customer" on floating constant
+In file included from unit_tests.cpp:232:
+logfile_parser.cpp:72: warning: large fixed-point constant implicitly truncated to fixed-point type
+logfile_parser.cpp:73:24: error: invalid suffix "date" on floating constant
+logfile_parser.cpp:83: warning: large fixed-point constant implicitly truncated to fixed-point type
+logfile_parser.cpp:85: warning: large fixed-point constant implicitly truncated to fixed-point type
+logfile_parser.cpp:86: warning: large fixed-point constant implicitly truncated to fixed-point type
+logfile_parser.cpp: In constructor 'LogfileParser::LogfileParser(const std::string&)':
+logfile_parser.cpp:72: error: fixed-point types not supported in C++
+logfile_parser.cpp:75: error: 'whenVistedTable' was not declared in this scope
+logfile_parser.cpp:83: error: fixed-point types not supported in C++
+logfile_parser.cpp:85: error: 'pageVistedTable' was not declared in this scope
+logfile_parser.cpp:85: error: fixed-point types not supported in C++
+logfile_parser.cpp:86: error: 'uniqueURLS' was not declared in this scope
+logfile_parser.cpp:86: error: fixed-point types not supported in C++
+logfile_parser.cpp: In member function 'bool LogfileParser::hasVisited(const std::string&, const std::string&) const':
+logfile_parser.cpp:107: error: 'whenVisitedtable' was not declared in this scope
+logfile_parser.cpp: In member function 'time_t LogfileParser::dateVisited(const std::string&, const std::string&) const':
+logfile_parser.cpp:124: error: 'hasVisted' was not declared in this scope
+
+
+Running tests...
+================================================================
+testWordCountLP [8 pts]  - passed
+testWordCountSC [8 pts]  - passed
+testAnagramsLP  [8 pts]  - passed
+testAnagramsSC  [8 pts]  - passed
+testInsertHard  [10 pts] - passed
+testInsertEasy  [6 pts]  - passed
+testResizeAll . [11 pts] - passed
+testResizeOnce  [7 pts]  - passed
+testRemoveHard  [10 pts] - passed
+testRemoveEASY  [6 pts]  - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 82
+
