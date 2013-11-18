@@ -42,8 +42,29 @@ animation Shifter::shiftSerial(const PNG & toShift)
  * @return - an animation of the image being shifted
  */
 animation Shifter::shiftParallel(const PNG & toShift)
-{
+{   
+	PNG image = toShift;
     animation anim;
+    int width = image.width();
+    int height = image.height();
+    int shiftAmount = 32;
+
+        // shift image to the left by 32 pixels each iteration
+    for(int destCol = 0; destCol < width; destCol += 32)
+    {
+        #pragma omp parallel for
+        for(int y = 0; y < height; ++y)
+        {
+            for(int x = 0; x < width - 32; ++x)
+            {
+                *image(x, y) = *image(x + 32, y);
+            }
+        }
+        if(destCol % shiftAmount == 0)
+        {
+            anim.addFrame(image);
+        }
+    }
     return anim;
 }
 
