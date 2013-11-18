@@ -32,16 +32,16 @@ void Flipper::flipSerial(PNG & image)
  */
 void Flipper::flipParallel(PNG & image)
 {
-    RGBAPixel temp;
+
     int height = image.height(); 
     int width = image.width();
     
-    //#pragma omp parallel for
+    #pragma omp parallel for
     for(int i = 0; i < width; ++i)
     {
         for(int j = 0; j < height / 2; ++j)
         {
-            temp = *image(i, j);
+        	RGBAPixel temp = *image(i, j);
             *image(i, j) = *image(i, height - 1 - j);
             *image(i, height - 1 - j) = temp;
         }

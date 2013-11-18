@@ -14,12 +14,12 @@
  */
 void MultTable::findProductsParallel(int** table, int width, int height, bool print)
 {
-    int i, j;
-
+    
+	
     #pragma omp parallel for
-    for(i = 0; i < width; ++i)
+    for(int i = 0; i < width; ++i)
     {
-        for(j = 0; j < height; ++j)
+        for(int j = 0; j < height; ++j)
         {
            table[i][j] = (i+1)*(j+1); 
         }

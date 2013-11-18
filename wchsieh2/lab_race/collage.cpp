@@ -47,7 +47,22 @@ void Collage::drawByLayersSerial(PNG * result)
  */
 void Collage::drawByLayersParallel(PNG * result)
 {
-
+	for(int layer = 0; layer < layers.size(); ++layer)
+		{
+		    // draw the current image on the collage
+		    int offsetW = coords[layer].x;
+		    int offsetH = coords[layer].y;
+		    cout << "  - drawing layer " << layer;
+		    cout << " @(" << offsetW << "," << offsetH << ")" << endl;
+		    #pragma omp parallel for
+		    for(int i = 0; i < layers[layer].width(); ++i)
+		    {
+		        for(int j = 0; j < layers[layer].height(); ++j)
+		        {
+		            *(*result)(i + offsetW, j + offsetH) = *(layers[layer](i, j));
+		        }
+		    }
+		}
 }
 
 /**
@@ -64,6 +79,19 @@ void Collage::drawByCoordinatesSerial(PNG * result)
         {
             // TODO: insert your code here!
             // find which image the current (i, j) pixel will belong to (if any)
+        	for (int layer = layers.size()-1; layer >= 0; --layer)
+            {
+            	int height = layers[layer].height();
+            	int width = layers[layer].width();
+                int offsetH = coords[layer].y;
+                int offsetW = coords[layer].x;
+                
+                if (( j >= offsetH && j < (offsetH+height))&&(i >= offsetW && i < (offsetW+width)))
+                {
+                    *(*result)(i,j) = *(layers[layer](i-offsetW,j-offsetH));
+                    break;
+                }
+            }
         }
     }
 }
@@ -75,7 +103,27 @@ void Collage::drawByCoordinatesSerial(PNG * result)
  */
 void Collage::drawByCoordinatesParallel(PNG * result)
 {
-
+	for(int i = 0; i < width; ++i)
+    {
+        #pragma omp parallel for
+        for(int j = 0; j < height; ++j)
+        {
+            // find which image the current (i, j) pixel will belong to (if any)
+            for (int layer = layers.size()-1; layer >= 0; --layer)
+            {
+                int height = layers[layer].height();
+            	int width = layers[layer].width();
+                int offsetH = coords[layer].y;
+                int offsetW = coords[layer].x;
+                
+                if (( j >= offsetH && j < (offsetH+height))&&(i >= offsetW && i < (offsetW+width)))
+                {
+                    *(*result)(i,j) = *(layers[layer](i-offsetW,j-offsetH));
+                    break;
+                }
+            }
+        }
+    }
 }
 
 /**
