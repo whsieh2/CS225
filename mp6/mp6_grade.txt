@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp6 at 2013-11-17 01:37:15
+Testing mp6 at 2013-11-18 17:23:35
 
-"I think Microsoft named .NET so it wouldn't show up in a Unix directory listing." ~ Oktal
+"Be careful about using the following code -- I've only proven that it works, I haven't tested it." ~ Donald Knuth
 
 Setting up test environment...
 Compiling...
