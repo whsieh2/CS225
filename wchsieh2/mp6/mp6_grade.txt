@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp6 at 2013-11-18 17:23:35
+Testing mp6 at 2013-11-19 00:58:48
 
-"Be careful about using the following code -- I've only proven that it works, I haven't tested it." ~ Donald Knuth
+"In the absence of our leader, I'm assuming control." ~ Kyle Johnson
 
 Setting up test environment...
 Compiling...
