@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp6 at 2013-11-19 00:58:48
+Testing mp6 at 2013-11-19 10:56:51
 
-"In the absence of our leader, I'm assuming control." ~ Kyle Johnson
+"Optimism is an occupational hazard of programming; feedback is the treatment." ~ Kent Beck
 
 Setting up test environment...
 Compiling...
