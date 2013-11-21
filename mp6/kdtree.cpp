@@ -12,7 +12,7 @@ bool KDTree<Dim>::smallerDimVal(const Point<Dim> & first, const Point<Dim> & sec
      * @todo Implement this function!
      
      */
-    if ( first[curDim] == second[curDim])
+    if (second[curDim]==first[curDim])
     	return first<second;
     else	 
    		return first[curDim]<second[curDim] ;
@@ -71,9 +71,10 @@ template<int Dim>
 void KDTree<Dim>::quickSelect(int k, int left, int right, int curDim)
 {
     //partition
+    int pivotNewIndex = partition(left, right, k, curDim);
     while(left != right)
     {
-        int pivotNewIndex = partition(left, right, k, curDim);
+        pivotNewIndex = partition(left, right, k, curDim);
         if (pivotNewIndex == k)
             return ;
         else if (k > pivotNewIndex) 
@@ -122,9 +123,10 @@ Point<Dim> KDTree<Dim>::findNearestNeighbor(const Point<Dim> & query) const
 template<int Dim>
 Point<Dim> KDTree<Dim>::NeighborHelper(int curDim, const Point<Dim> &query, int left, int right, const Point<Dim> &currentBest) const
 {
-    //cout<<"[dim]: "<<curDim<<" [left]: "<<left<<" [right]: "<<right<<" [query]: "<<query<<" [curr]: "<<currentBest<<endl;
-    Point<Dim> ret_val = currentBest;
     bool target_left = true;
+    int otherSubMedian;
+    int median = (left + right)/2;
+    Point<Dim> ret_val = currentBest;
     if (left == right)
     {
         // at leaf node
@@ -138,11 +140,7 @@ Point<Dim> KDTree<Dim>::NeighborHelper(int curDim, const Point<Dim> &query, int 
         ret_val = currentBest;
         return ret_val;
     }
-    //Get closest point in the subtree containing target
-    int otherSubMedian;
-    int median = (left + right)/2;
-    
-   
+    //Get closest point in the subtree containing target  
     if (smallerDimVal(query, points[median], curDim) && left < median)
     {   
         ret_val = NeighborHelper((curDim+1)%Dim, query, left, median-1, currentBest);
@@ -164,10 +162,11 @@ Point<Dim> KDTree<Dim>::NeighborHelper(int curDim, const Point<Dim> &query, int 
     //cout<<"[split dist]: "<<a[curDim]-query[curDim]<<" [radius]: "<<distance(query, ret_val)<<" [median]: "<<points[median]<<" [ret_val]: "<<ret_val<<endl;
     if (pow(a[curDim] - query[curDim],2) <= distance(query, ret_val))
     {
+    	if (!target_left && left < median)
+            ret_val = NeighborHelper((curDim+1)%Dim, query, left, median-1, ret_val);
         if (target_left && right > median)
             ret_val = NeighborHelper((curDim+1)%Dim, query, median+1, right, ret_val);
-        if (!target_left && left < median)
-            ret_val = NeighborHelper((curDim+1)%Dim, query, left, median-1, ret_val);
+      
     }
     return ret_val;
 
