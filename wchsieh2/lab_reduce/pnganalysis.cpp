@@ -27,6 +27,22 @@ int pnganalysis::num_selected( const PNG & image, selector & select ) {
 	//
 	// Hint2: You'll need a reduction!
 	int selected = 0;
+	#pragma omp parallel
+    {
+        int local_selected = 0;
+        #pragma omp for 
+       
+        for ( int j = 0; j < image.height(); j++)
+        {
+            for (int i = 0; i < image.width(); i++)
+            {
+                if (select(*image(i,j)))
+                    local_selected++;
+            }
+        }
+        #pragma omp critical
+        selected += local_selected;
+    }
 	return selected;
 }
 
@@ -43,12 +59,24 @@ map<RGBAPixel, int> pnganalysis::frequency( const PNG & image ) {
 	// Paralelize this code!
 	// Hint: Read the spec (lab website) to see how to iterate over an
 	//       map!
-	for( int i = 0; i < image.width(); ++i ) {
-		for( int j = 0, height = image.height(); j < height; ++j ) {
-			++ret_freq[ *image(i,j) ];
-		}
-	}
-	return ret_freq;
+   #pragma omp parallel
+    {
+        map<RGBAPixel, int> ret_freq_local;
+        #pragma omp for
+        for( int j = 0; j < image.height(); ++j) {
+            for( int i = 0; i < image.width(); ++i ) {
+                ++ret_freq_local[ *image(i,j) ];
+            }
+        }
+        map<RGBAPixel, int>::iterator curr;
+        map<RGBAPixel, int>::iterator end;
+        for (curr = ret_freq_local.begin(),end = ret_freq_local.end(); curr != end; ++curr)
+        {
+            #pragma omp critical
+            ret_freq[curr->first] += curr->second; 
+        }
+    }
+        return ret_freq;
 }
 
 /**
