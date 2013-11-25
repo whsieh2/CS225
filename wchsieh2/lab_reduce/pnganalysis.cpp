@@ -32,9 +32,9 @@ int pnganalysis::num_selected( const PNG & image, selector & select ) {
         int local_selected = 0;
         #pragma omp for 
        
-        for ( int j = 0; j < image.height(); j++)
+        for ( unsigned int j = 0; j < image.height(); j++)
         {
-            for (int i = 0; i < image.width(); i++)
+            for (unsigned int i = 0; i < image.width(); i++)
             {
                 if (select(*image(i,j)))
                     local_selected++;
@@ -63,8 +63,8 @@ map<RGBAPixel, int> pnganalysis::frequency( const PNG & image ) {
     {
         map<RGBAPixel, int> ret_freq_local;
         #pragma omp for
-        for( int j = 0; j < image.height(); ++j) {
-            for( int i = 0; i < image.width(); ++i ) {
+        for( unsigned int j = 0; j < image.height(); ++j) {
+            for( unsigned int i = 0; i < image.width(); ++i ) {
                 ++ret_freq_local[ *image(i,j) ];
             }
         }
