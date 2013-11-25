@@ -20,6 +20,23 @@
  */
 template <class T>
 T findmin::minimum( const vector<T> & list ) {
-	// Implement and parallelize this code!
-	return T();
+
+	T min;
+    #pragma omp parallel
+    {
+        T local_min = min;
+        #pragma omp for
+        for (unsigned int i = 0; i < list.size(); i++)
+        {
+            if (local_min > list[i])
+                local_min = list[i];
+            #pragma omp critical
+            {
+                if (min > local_min)
+                    min = local_min;
+            }
+        }
+    }
+    return min;
+	
 }
