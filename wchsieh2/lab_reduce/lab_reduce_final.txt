@@ -1,0 +1,23 @@
+Monad Autograder
+Testing lab_reduce at 2013-11-25 17:05:41
+
+"Even if by chance this world should end tomorrow, if it's together with you, would 'I'm okay with that too' be the cool attitude you'd take?" ~ Makino Yui
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+findmin_minimum_correctness . . . . [20 pts] - passed
+findmin_minimum_parallel_concurrent [15 pts] - passed
+num_selected_correctness  . . . . . [15 pts] - passed
+num_selected_concurrency  . . . . . [10 pts] - passed
+frequency_parallel_correctness  . . [40 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+
