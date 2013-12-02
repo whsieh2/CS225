@@ -1,7 +1,7 @@
 Monad Autograder
-Testing lab_heaps at 2013-11-18 18:42:01
+Testing lab_heaps at 2013-12-02 00:59:58
 
-"To iterate is human, to recurse divine." ~ L. Peter Deutsch
+"One day I will shoot you with this bullet. Can you still say that you love me?" ~ Re-l Mayer
 
 Setting up test environment...
 Compiling...
