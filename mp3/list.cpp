@@ -29,12 +29,16 @@ template <class T>
 void List<T>::clear()
 {
 	
-	while (head)
-	{
-		tail=head->next;
-		delete head;
-		head=tail;
-	}
+	if (!empty())
+    {
+        // delete every until you hit tail
+        ListNode * next = head;
+        while (next != NULL)  {
+            next = head->next;
+            delete head;
+            head = next;
+        }
+    }
     /// @todo Graded in MP3.1
 }
 
@@ -48,19 +52,20 @@ template <class T>
 void List<T>::insertFront(T const & ndata)
 {	
 	ListNode * newnode = new ListNode(ndata);
-	if (head != NULL)
+	if (empty())
+	{
+		head = newnode;
+		tail = newnode;
+		length++;
+
+	}
+	else
 	{
 		newnode -> next = head ;
 		head ->prev = newnode;
 		head = newnode;
 		length++;
 		head -> prev = NULL;
-	}
-	else
-	{
-		head = newnode;
-		tail = newnode;
-		length++;
 	}
 	newnode = NULL;
 	
@@ -122,27 +127,62 @@ template <class T>
 void List<T>::reverse( ListNode * & startPoint, ListNode * & endPoint )
 {
 
-	if (length == 0)
-		return;
-		
-	ListNode * temp1 = head;
-	ListNode * temp2 = head;
-	
-	while (temp1!=tail)
-	{
-		temp2 = temp1;
-		temp1 = temp1->next;
-		temp2->next = temp2->prev;
-		temp2->prev=temp1;
-		
-	}
-	temp1 -> next = temp2;
-	temp1 -> prev= NULL;
-	tail = head;
-	head = temp1;
-	temp1 = NULL;
-	temp2 = NULL;
-	
+	if (!empty())
+    {
+    	// save the prev/next pointers of start/end
+        ListNode * startPrev = startPoint->prev;
+        ListNode * endNext = endPoint->next;
+        // used to swap the next/prev pointers of each node
+        ListNode * tempSwap;
+        // save the old StartPoint/endPoint to flip them at the end
+        ListNode * oldStart = startPoint;
+        ListNode * oldEnd = endPoint;
+        // check distance, distance is used to be for loop counter
+        tempSwap = startPoint;      
+        // counter to check distance between start and end
+        int x = 0;
+ 
+
+        while(tempSwap != endPoint)
+        {
+            tempSwap=tempSwap->next;
+            x++;
+        }
+ 
+        for (int i = 0; i <= x; i++)
+        {
+            // swap prev/next pointers of current node
+            tempSwap = startPoint->prev;
+            startPoint->prev = startPoint->next;
+            startPoint->next = tempSwap;
+            startPoint = startPoint->prev;
+        }
+ 
+        // flip startPoint and endPoint and its pointers
+        startPoint = oldEnd;
+        endPoint   = oldStart;
+        if (startPrev == NULL)
+        {
+			startPoint->prev = NULL;
+        }
+        else
+        {
+        	startPoint->prev = startPrev;
+            startPrev->next = startPoint;
+        }
+            
+        if (endNext == NULL)
+        {
+        	endPoint->next = NULL;
+
+        }
+        else
+        {
+        	endPoint->next = endNext;
+            endNext->prev = endPoint;
+        }
+            
+    }
 	
 	
 	
@@ -160,7 +200,7 @@ void List<T>::reverse( ListNode * & startPoint, ListNode * & endPoint )
 template <class T>
 void List<T>::reverseNth( int n )
 {
-	if(head == NULL)
+	if(empty())
 		return;
 	if (n == length)
 	{
@@ -168,15 +208,16 @@ void List<T>::reverseNth( int n )
 		return;
 	}
 	
-	ListNode * headTemp = head;
 	ListNode * endTemp = head; // temporarily
 	ListNode * temp = NULL;
+	ListNode * headTemp = head;
 	
-	int count = 0;
-	if(length%n == 0)
-		count = (length/n);
-	else 
+	
+	int count;
+	if(length%n != 0)
 		count = (length/n) + 1;
+	else 
+		count = (length/n);
 	
 	for(int j =0;j < count; j++) //iterate over the entire list in chunks
 	{ 
@@ -319,16 +360,17 @@ List<T> List<T>::split(int splitPoint)
 template <class T>
 typename List<T>::ListNode * List<T>::split(ListNode * start, int splitPoint)
 {
-	
-  	ListNode * temp = start;
-    int num = splitPoint;
-    while (num--)
-    {
-        temp = temp->next;
-    }
-    if (temp->prev != NULL)
-        temp->prev->next = NULL;
-    return temp;
+    ListNode * splitHere = start;
+    ListNode * secondHead;
+   
+    // get the location of where it is split
+    for (int i = 0; i < splitPoint - 1; i++)
+        splitHere = splitHere->next;
+    secondHead = splitHere->next;
+    // split the list by pointing next/prev to NULL
+    splitHere->next = NULL;
+    secondHead->prev = NULL;
+    return secondHead;
 }
 
 /**
@@ -375,6 +417,8 @@ typename List<T>::ListNode * List<T>::merge(ListNode * first, ListNode * second)
 		return second;
 	else if(second == NULL)
 		return first;
+	else if (first ==NULL && second ==NULL)
+		return NULL;
 	else if((first->data) < (second->data))
 	{
 		first->next = merge(first->next,second);
@@ -420,12 +464,15 @@ typename List<T>::ListNode * List<T>::mergesort(ListNode * start, int chainLengt
     ListNode * right;
     int leftPart, rightPart;
     
-    if (chainLength <= 1) 
+    if (start ==NULL)
+    	return NULL;
+    else if (chainLength <= 1) 
     	return start;
-    if (chainLength %2 ==0) //See's if the length is even
+   	else if (chainLength %2 ==0) //See's if the length is even
     {
-    	leftPart = chainLength/2;
     	rightPart = chainLength/2;
+    	leftPart = chainLength/2;
+    	
     }
     else //if it's not, rightPart will have the bigger side
     {
