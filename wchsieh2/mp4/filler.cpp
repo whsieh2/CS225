@@ -11,7 +11,7 @@
 animation filler::dfs::fillSolid( PNG & img, int x, int y, 
         RGBAPixel fillColor, int tolerance, int frameFreq ) {
 
-     solidColorPicker solid(fillColor);
+    solidColorPicker solid(fillColor);
     return filler::fill<Stack>(img, x, y, solid, tolerance, frameFreq);
 }
 
@@ -49,8 +49,8 @@ animation filler::bfs::fillSolid( PNG & img, int x, int y,
 animation filler::bfs::fillGrid( PNG & img, int x, int y, 
         RGBAPixel gridColor, int gridSpacing, int tolerance, int frameFreq ) {
    
-   gridColorPicker fillColor(gridColor, gridSpacing);
-   return filler::fill<Queue>(img, x, y, fillColor, tolerance, frameFreq); 
+	gridColorPicker fillColor(gridColor, gridSpacing);
+	return filler::fill<Queue>(img, x, y, fillColor, tolerance, frameFreq); 
 }
 
 animation filler::bfs::fillGradient( PNG & img, int x, int y, 
@@ -125,17 +125,10 @@ animation filler::fill( PNG & img, int x, int y,
      *        have been checked. So if frameFreq is set to 1, a pixel should
      *        be filled every frame.
      */
-    OrderingStructure<RGBAPixel> pixels;
+ 	OrderingStructure<RGBAPixel> pixels;
     OrderingStructure<int> xcoords;
     OrderingStructure<int> ycoords;
     int processed[img.width()][img.height()];
-    for (int i = 0; i < img.width(); i++) 
-    {
-        for (int j = 0; j <img.height(); j++)
-        {
-            processed[i][j] = false;
-        }
-    }
     animation myAnim;
     int frameCount = 0;
 
@@ -144,26 +137,32 @@ animation filler::fill( PNG & img, int x, int y,
     int origGreen = origPixel.green;
     int origBlue = origPixel.blue;
     
-
-
-    //add first point
+        //add first point
     pixels.add(*img(x,y));
     xcoords.add(x);
     ycoords.add(y);
+    for (int j = 0; j <img.height(); j++)
+    {
+		for (int i = 0; i < img.width(); i++) 
+        {
+            processed[i][j] = false;
+        }
+    }
+
+
+
 
     while (!pixels.isEmpty())
     {
         //remove one point in the structure
         RGBAPixel currPixel = pixels.remove();
 
+		int currX = xcoords.remove();
+        int currY = ycoords.remove();
         int currRed = currPixel.red;
         int currGreen = currPixel.green;
         int currBlue = currPixel.blue;
-        int currX = xcoords.remove();
-        int currY = ycoords.remove();
-
-   
-
+        
         //compute min
         int min = pow(origRed-currRed,2)+pow(origGreen-currGreen,2)+pow(origBlue-currBlue,2);
 
@@ -173,46 +172,47 @@ animation filler::fill( PNG & img, int x, int y,
         //process a currPixel if it's not processed yet and it's within tolerance 
         if (inTolDis && !processed[currX][currY])
         {
+        	
+            //change color
+            *(img(currX,currY)) = fillColor(currX,currY); 
+            
             //mark it processed
             processed[currX][currY] = true;
             frameCount++;
 
-            //change color
-            *(img(currX,currY)) = fillColor(currX,currY); 
 
-       
             //add neighbors to structure
             if (currX+1 <img.width())
             {
-            //RIGHT
-            pixels.add(*(img(currX+1,currY)));
-            xcoords.add(currX+1);
-            ycoords.add(currY);
+		        //RIGHT      
+		       	ycoords.add(currY);
+		        xcoords.add(currX+1);
+		        pixels.add(*(img(currX+1,currY)));
             }
-            
+        
             if (currY+1 <img.height())
             {
-            //DOWN
-            pixels.add(*(img(currX,currY+1)));
-            xcoords.add(currX);
-            ycoords.add(currY+1);
+		        //DOWN
+		    	ycoords.add(currY+1);
+		        xcoords.add(currX);
+		         pixels.add(*(img(currX,currY+1)));
             }
 
             if (currX-1>= 0)
             {
-            //LEFT
-            pixels.add(*(img(currX-1,currY)));
-            xcoords.add(currX-1);
-            ycoords.add(currY);
+		        //LEFT  
+		        ycoords.add(currY);
+		        xcoords.add(currX-1);
+		        pixels.add(*(img(currX-1,currY)));
             }
 
             if (currY-1>= 0)
             {
-            //DOWN
-            pixels.add(*(img(currX,currY-1)));
-            xcoords.add(currX);
-            ycoords.add(currY-1);
-            }
+		        //DOWN
+   		        ycoords.add(currY-1);
+		        xcoords.add(currX);
+		        pixels.add(*(img(currX,currY-1)));
+		    }
             
 
             //add frame to animation if frame count is divisible by framefreq
@@ -224,4 +224,5 @@ animation filler::fill( PNG & img, int x, int y,
        } 
     }
     return myAnim;
+    
 }
