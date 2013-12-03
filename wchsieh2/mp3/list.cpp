@@ -141,6 +141,7 @@ void List<T>::reverse( ListNode * & startPoint, ListNode * & endPoint )
         tempSwap = startPoint;      
         // counter to check distance between start and end
         int x = 0;
+        
  
 
         while(tempSwap != endPoint)
@@ -259,13 +260,14 @@ void List<T>::reverseNth( int n )
 template <class T>
 void List<T>::waterfall()
 {
-	 if (length == 0)
-        return;
-    
-    int num = 1;
+	int num = 1;
 
     ListNode * temp1 = head;
     ListNode * temp2 = head;
+	 if (length == 0)
+        return;
+    
+
 
     while ((temp1->next != tail) && (temp1 != tail) && (temp1 != NULL))
     {
@@ -291,6 +293,8 @@ void List<T>::waterfall()
 
     temp1 = NULL;
     temp2 = NULL;
+    delete temp1;
+    delete temp2;
 
 	//implement reverse
 	//but loop it.
