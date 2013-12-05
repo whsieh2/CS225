@@ -248,7 +248,7 @@ void Quadtree::prune(int tolerance, QuadtreeNode * subRoot)
 	if (checkTol(subRoot, subRoot, tolerance))
     {
         //prune
-         clearTree(subRoot->swChild);
+        clearTree(subRoot->swChild);
         clearTree(subRoot->seChild);
         clearTree(subRoot->nwChild);
         clearTree(subRoot->neChild);
@@ -269,14 +269,18 @@ void Quadtree::prune(int tolerance, QuadtreeNode * subRoot)
 
 bool Quadtree::checkTol(QuadtreeNode * subRoot, QuadtreeNode * avgRoot, int tol) const
 {
-    if (subRoot->nwChild == NULL)
+    if (subRoot->nwChild != NULL)
     {
-        return (difference(subRoot, avgRoot)<=tol);
+    	return  (checkTol(subRoot->nwChild, avgRoot, tol) &&
+		            checkTol(subRoot->neChild, avgRoot, tol) &&
+		            checkTol(subRoot->swChild, avgRoot, tol) &&
+		            checkTol(subRoot->seChild, avgRoot, tol)); 
+
     }
-    return  (checkTol(subRoot->nwChild, avgRoot, tol) &&
-                checkTol(subRoot->neChild, avgRoot, tol) &&
-                checkTol(subRoot->swChild, avgRoot, tol) &&
-                checkTol(subRoot->seChild, avgRoot, tol)); 
+    else
+    {
+        return (difference(subRoot, avgRoot)<=tol);		
+	}
 }
 
 
@@ -293,12 +297,13 @@ int Quadtree::pruneSize(int tolerance) const
 
 int Quadtree::pruneSize(int tolerance, QuadtreeNode * subRoot) const
 {
+	if (subRoot->nwChild == NULL)
+        return 1;
 	if (checkTol(subRoot, subRoot, tolerance))
     {
         return 1;
     }
-    if (subRoot->nwChild == NULL)
-        return 1;
+
    
     return pruneSize(tolerance, subRoot->nwChild) + pruneSize(tolerance, subRoot->neChild) + pruneSize(tolerance, subRoot->swChild) + pruneSize(tolerance, subRoot->seChild);
 }
