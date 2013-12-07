@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp7 at 2013-12-06 01:02:00
+Testing mp7 at 2013-12-07 01:08:43
 
-"I hear and I forget; I see and I remember; I do and I understand." ~ Confucius
+"Sometimes I just like to throw things." ~ Cinda Heeren
 
 Setting up test environment...
 Error: /dev/shm/geigle1/monad/fa13-cs225/wchsieh2/mp7/maze.h does not exist.
