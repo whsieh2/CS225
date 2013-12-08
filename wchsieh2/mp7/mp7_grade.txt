@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp7 at 2013-12-07 01:08:43
+Testing mp7 at 2013-12-08 01:14:44
 
-"Sometimes I just like to throw things." ~ Cinda Heeren
+"Find your points of interest, compute HOG features, bung them into a classifier, and see what you get." ~ D.A. Forsyth
 
 Setting up test environment...
 Error: /dev/shm/geigle1/monad/fa13-cs225/wchsieh2/mp7/maze.h does not exist.
