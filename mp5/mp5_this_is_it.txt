@@ -1,0 +1,268 @@
+Monad Autograder
+Testing mp5 at 2013-12-09 06:18:56
+
+"Don't beg. Earn it. Then it will be granted to you." ~ Adroc Thurston
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+test_default_ctor  . . . . . . [1 pts] - passed
+test_ctor_1  . . . . . . . . . [1 pts] - passed
+test_ctor_2  . . . . . . . . . [2 pts] - passed
+test_buildTree_1 . . . . . . . [2 pts] - passed
+test_buildTree_2 . . . . . . . [1 pts] - passed
+test_buildTree_3 . . . . . . . [2 pts] - passed
+test_cctor_1 . . . . . . . . . [1 pts] - passed
+test_cctor_2 . . . . . . . . . [1 pts] - FAILED: Segmentation fault
+test_cctor_3 . . . . . . . . . [1 pts] - FAILED: Segmentation fault
+test_cctor_4 . . . . . . . . . [1 pts] - FAILED: Segmentation fault
+test_assign_op_1 . . . . . . . [1 pts] - passed
+test_assign_op_2 . . . . . . . [1 pts] - FAILED: Segmentation fault
+test_assign_op_3 . . . . . . . [1 pts] - FAILED: Segmentation fault
+test_assign_op_4 . . . . . . . [1 pts] - FAILED: Segmentation fault
+test_getPixel_1  . . . . . . . [1 pts] - passed
+test_getPixel_2  . . . . . . . [2 pts] - passed
+test_getPixel_3  . . . . . . . [2 pts] - passed
+test_getPixel_4  . . . . . . . [2 pts] - passed
+test_decompress_unpruned_1 . . [1 pts] - passed
+test_decompress_unpruned_2 . . [1 pts] - passed
+test_decompress_unpruned_3 . . [1 pts] - passed
+test_decompress_unpruned_4 . . [1 pts] - passed
+time_getPixel_logn . . . . . . [4 pts] - passed
+time_decompress_n (valgrind) . [4 pts] - FAILED: unit_tests.cpp:296: Runtime was larger than O(n)
+valgrind_big3 (valgrind) . . . [4 pts] - FAILED: Segmentation fault
+test_clockwiseRotate_1 . . . . [1 pts] - FAILED: Segmentation fault
+test_clockwiseRotate_2 . . . . [1 pts] - passed
+test_clockwiseRotate_3 . . . . [2 pts] - passed
+test_clockwiseRotate_4 . . . . [2 pts] - passed
+test_prune_1 . . . . . . . . . [2 pts] - FAILED: Segmentation fault
+test_prune_2 . . . . . . . . . [3 pts] - passed
+test_prune_3 . . . . . . . . . [2 pts] - passed
+test_prune_4 . . . . . . . . . [5 pts] - passed
+test_prune_copy  . . . . . . . [2 pts] - FAILED: Segmentation fault
+test_prune_rotate  . . . . . . [2 pts] - passed
+test_prune_getPixel  . . . . . [3 pts] - passed
+test_pruneSize_1 . . . . . . . [2 pts] - FAILED: Segmentation fault
+test_pruneSize_2 . . . . . . . [2 pts] - passed
+test_pruneSize_3 . . . . . . . [2 pts] - passed
+test_pruneSize_4 . . . . . . . [2 pts] - passed
+test_pruneSize_5 . . . . . . . [2 pts] - passed
+test_idealPrune_1  . . . . . . [2 pts] - passed
+test_idealPrune_2  . . . . . . [3 pts] - FAILED: Segmentation fault
+test_idealPrune_3  . . . . . . [2 pts] - passed
+test_idealPrune_4  . . . . . . [5 pts] - FAILED: Timed out (10000ms)
+val_clockwiseRotate (valgrind) [2 pts] - passed
+val_prune (valgrind) . . . . . [4 pts] - passed
+val_idealPrune (valgrind)  . . [3 pts] - passed
+test_const_correctness . . . . [4 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 71
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+test_cctor_2 [1 points]
+Result: FAILED: Segmentation fault
+Took 38994224ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_cctor_3 [1 points]
+Result: FAILED: Segmentation fault
+Took 63239098466315ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_cctor_4 [1 points]
+Result: FAILED: Segmentation fault
+Took 63243393433611ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_assign_op_2 [1 points]
+Result: FAILED: Segmentation fault
+Took 63251983368203ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_assign_op_3 [1 points]
+Result: FAILED: Segmentation fault
+Took 63256278335499ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_assign_op_4 [1 points]
+Result: FAILED: Segmentation fault
+Took 63260573302795ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+time_decompress_n (run under valgrind) [4 points]
+Result: FAILED: unit_tests.cpp:296: Runtime was larger than O(n)
+Took unknown time (120000ms timeout)
+Output:
+----------------------------------------------------------------
+Running time_decompress_n [worth 4 points, output below]
+Input size 1: 30810 iterations in 492 ms for an average of 15.9847 us per call
+Input size 4096: 40 iterations in 1293 ms for an average of 32342.2 us per call
+Input size 65536: 3 iterations in 1888 ms for an average of 629622 us per call
+Actual ratio:     19.4766
+Expected ratio:   16
+Wrong/high ratio: 21.3333
+Diff from expected: 3.47663
+Diff from wrong:    1.8567
+Result: FAILED:
+unit_tests.cpp:296: Runtime was larger than O(n)
+
+----------------------------------------------------------------
+valgrind_big3 (run under valgrind) [4 points]
+Result: FAILED: Segmentation fault
+Took unknown time (120000ms timeout)
+Output:
+----------------------------------------------------------------
+Running valgrind_big3 [worth 4 points, output below]
+==14798== Invalid read of size 4
+==14798==    at 0x42430A: Quadtree::QuadtreeNode::QuadtreeNode(Quadtree::QuadtreeNode const*) (quadtree.h:73)
+==14798==    by 0x423281: Quadtree::copy(Quadtree::QuadtreeNode*) (quadtree.cpp:44)
+==14798==    by 0x4232C8: Quadtree::copy(Quadtree::QuadtreeNode*) (quadtree.cpp:50)
+==14798==    by 0x4232C8: Quadtree::copy(Quadtree::QuadtreeNode*) (quadtree.cpp:50)
+==14798==    by 0x4232C8: Quadtree::copy(Quadtree::QuadtreeNode*) (quadtree.cpp:50)
+==14798==    by 0x4232C8: Quadtree::copy(Quadtree::QuadtreeNode*) (quadtree.cpp:50)
+==14798==    by 0x4232C8: Quadtree::copy(Quadtree::QuadtreeNode*) (quadtree.cpp:50)
+==14798==    by 0x423244: Quadtree::Quadtree(Quadtree const&) (quadtree.cpp:38)
+==14798==    by 0x41BD22: proxy_test::valgrind_big3(util::sizedpipestream<512ul>&) (unit_tests.cpp:307)
+==14798==    by 0x407AF1: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==14798==    by 0x40692B: proxy::test_execution::child_test() (proxy.cpp:549)
+==14798==    by 0x40634A: proxy::test_execution::child() (proxy.cpp:434)
+==14798==  Address 0x24 is not stack'd, malloc'd or (recently) free'd
+==14798== 
+==14798== 
+==14798== Process terminating with default action of signal 11 (SIGSEGV)
+==14798==  Access not within mapped region at address 0x24
+==14798==    at 0x42430A: Quadtree::QuadtreeNode::QuadtreeNode(Quadtree::QuadtreeNode const*) (quadtree.h:73)
+==14798==    by 0x423281: Quadtree::copy(Quadtree::QuadtreeNode*) (quadtree.cpp:44)
+==14798==    by 0x4232C8: Quadtree::copy(Quadtree::QuadtreeNode*) (quadtree.cpp:50)
+==14798==    by 0x4232C8: Quadtree::copy(Quadtree::QuadtreeNode*) (quadtree.cpp:50)
+==14798==    by 0x4232C8: Quadtree::copy(Quadtree::QuadtreeNode*) (quadtree.cpp:50)
+==14798==    by 0x4232C8: Quadtree::copy(Quadtree::QuadtreeNode*) (quadtree.cpp:50)
+==14798==    by 0x4232C8: Quadtree::copy(Quadtree::QuadtreeNode*) (quadtree.cpp:50)
+==14798==    by 0x423244: Quadtree::Quadtree(Quadtree const&) (quadtree.cpp:38)
+==14798==    by 0x41BD22: proxy_test::valgrind_big3(util::sizedpipestream<512ul>&) (unit_tests.cpp:307)
+==14798==    by 0x407AF1: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==14798==    by 0x40692B: proxy::test_execution::child_test() (proxy.cpp:549)
+==14798==    by 0x40634A: proxy::test_execution::child() (proxy.cpp:434)
+==14798==  If you believe this happened as a result of a stack
+==14798==  overflow in your program's main thread (unlikely but
+==14798==  possible), you can try to increase the size of the
+==14798==  main thread stack using the --main-stacksize= flag.
+==14798==  The main thread stack size used in this run was 10485760.
+==14797== 31 bytes in 1 blocks are possibly lost in loss record 2 of 10
+==14797==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==14797==    by 0x332D49C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==14797==    by 0x332D49CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==14797==    by 0x332D49CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==14797==    by 0x405085: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
+==14797==    by 0x4077BD: __static_initialization_and_destruction_0(int, int) (proxy.cpp:31)
+==14797==    by 0x4077FA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
+==14797==    by 0x426875: ??? (in /dev/shm/geigle1/monad/mp5_grade/proxy)
+==14797==    by 0x4037CA: ??? (in /dev/shm/geigle1/monad/mp5_grade/proxy)
+==14797== 
+==14797== 33 bytes in 1 blocks are possibly lost in loss record 3 of 10
+==14797==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==14797==    by 0x332D49C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==14797==    by 0x332D49CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==14797==    by 0x332D49CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==14797==    by 0x405085: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
+==14797==    by 0x4077D1: __static_initialization_and_destruction_0(int, int) (proxy.cpp:37)
+==14797==    by 0x4077FA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
+==14797==    by 0x426875: ??? (in /dev/shm/geigle1/monad/mp5_grade/proxy)
+==14797==    by 0x4037CA: ??? (in /dev/shm/geigle1/monad/mp5_grade/proxy)
+==14797== 
+==14797== 37 bytes in 1 blocks are possibly lost in loss record 4 of 10
+==14797==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==14797==    by 0x332D49C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==14797==    by 0x332D49CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==14797==    by 0x332D49CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==14797==    by 0x405085: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
+==14797==    by 0x4077E5: __static_initialization_and_destruction_0(int, int) (proxy.cpp:43)
+==14797==    by 0x4077FA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
+==14797==    by 0x426875: ??? (in /dev/shm/geigle1/monad/mp5_grade/proxy)
+==14797==    by 0x4037CA: ??? (in /dev/shm/geigle1/monad/mp5_grade/proxy)
+==14797== 
+==14797== 132 bytes in 1 blocks are possibly lost in loss record 9 of 10
+==14797==    at 0x4A05FDE: malloc (vg_replace_malloc.c:236)
+==14797==    by 0x332D4BB746: __cxa_allocate_exception (in /usr/lib64/libstdc++.so.6.0.13)
+==14797==    by 0x4095EF: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (proxy.cpp:522)
+==14797==    by 0x4067AF: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (proxy.cpp:489)
+==14797==    by 0x405634: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (proxy.cpp:250)
+==14797==    by 0x40553C: proxy::RunTests::run_single_test(char const*) (proxy.cpp:238)
+==14797==    by 0x4053A4: proxy::RunTests::execute_by_mode() (proxy.cpp:223)
+==14797==    by 0x405355: proxy::RunTests::execute() (proxy.cpp:214)
+==14797==    by 0x404AF0: main (proxy.cpp:104)
+==14797== 
+Result: FAILED:
+Segmentation fault
+
+----------------------------------------------------------------
+test_clockwiseRotate_1 [1 points]
+Result: FAILED: Segmentation fault
+Took 63586990817291ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_prune_1 [2 points]
+Result: FAILED: Segmentation fault
+Took 63604170686475ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_prune_copy [2 points]
+Result: FAILED: Segmentation fault
+Took 63621350555659ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_pruneSize_1 [2 points]
+Result: FAILED: Segmentation fault
+Took 63668595195915ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_idealPrune_2 [3 points]
+Result: FAILED: Segmentation fault
+Took 63694364999691ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_idealPrune_4 [5 points]
+Result: FAILED: Timed out (10000ms)
+Took 10000ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 71
+
