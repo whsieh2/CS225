@@ -43,6 +43,10 @@ namespace GraphTools
 
     // define any helper functions here:
 
+    void BFS (Graph & graph, Vertex start);
+    void setUnexplored(Graph & graph);
+
+    bool sort_edge(Edge a, Edge b);
 }
 
 #endif
