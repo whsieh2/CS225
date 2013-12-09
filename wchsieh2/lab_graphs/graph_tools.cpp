@@ -53,8 +53,9 @@ int GraphTools::findShortestPath(Graph & graph, Vertex start, Vertex end)
             if (graph.getVertexLabel(w).compare("UNEXPLORED") == 0)
             {
                 vmap[w] = v;
+                graph.setVertexLabel(w, "VISITED");                
                 graph.setEdgeLabel(v, w, "DISCOVERY");
-                graph.setVertexLabel(w, "VISITED");
+
                 q.push(w);
             } 
             else if (graph.getEdgeLabel(v, w).compare("UNEXPLORED") == 0)
@@ -129,8 +130,9 @@ int GraphTools::findMinWeight(Graph & graph)
             if(graph.getEdgeWeight(v, w) <= min_weight)
             {
                 min_weight = graph.getEdgeWeight(v,w);
-                min_v = v;                
                 min_w = w;                
+                min_v = v;                
+                
 
 
             }
@@ -146,8 +148,9 @@ void GraphTools::setUnexplored(Graph &graph)
 {
 
 	Vertex start = graph.getStartingVertex();
+	graph.setVertexLabel(start,"UNEXPLORED");
 	queue<Vertex> q;
-    graph.setVertexLabel(start,"UNEXPLORED");
+
     q.push(start);
     while(!q.empty())
     {
