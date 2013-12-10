@@ -1,7 +1,7 @@
 Monad Autograder
-Testing mp7 at 2013-12-09 01:34:31
+Testing mp7 at 2013-12-10 01:54:10
 
-"The slogan of Subversion for a while was "CVS done right", or something like that, and if you start with that kind of slogan, there's nowhere you can go. There is no way to do CVS right." ~ Linus Torvalds
+"There are 10 types of people in the world. Those who understand binary, those who don't, and those who didn't expect this joke to be in base 3." ~ Anonymous
 
 Setting up test environment...
 Error: /dev/shm/geigle1/monad/fa13-cs225/wchsieh2/mp7/maze.h does not exist.
